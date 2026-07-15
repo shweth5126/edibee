@@ -3,7 +3,7 @@ import { useInView, motion } from "framer-motion";
 import { Reveal } from "./Reveal";
 
 const stats = [
-  { value: 562, suffix: "k+", label: "Views", sub: "Average monthly audience reach" },
+  { value: 2, suffix: "M+", label: "Views", sub: "Average monthly audience reach" },
   { value: 50, suffix: "+", label: "Projects", sub: "Completed across industries" },
   { value: 5, suffix: "+", label: "Brands", sub: "Strategic collaborations launched" },
 ];
