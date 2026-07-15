@@ -34,7 +34,7 @@ const plans: Plan[] = [
   },
   {
     name: "Dominate",
-    price: "₹21,000",
+    price: "₹25,000",
     description: "A full-service partnership built for larger campaigns.",
     featured: false,
     features: [
