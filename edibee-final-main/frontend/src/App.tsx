@@ -5,6 +5,7 @@ import { Story } from "./components/Story";
 import { Services } from "./components/Services";
 import { Portfolio } from "./components/Portfolio";
 import { Results } from "./components/Results";
+import { Pricing } from "./components/Pricing";
 import { Team } from "./components/Team";
 import { DashboardPreview } from "./components/DashboardPreview";
 import { Footer } from "./components/Footer";
@@ -45,13 +46,14 @@ function App() {
       <Navbar />
 <main>
   <Hero />
-  <Story />
-  <Marquee />
-  <Services />
-  <DashboardPreview />
-  <Portfolio />
-  <Results />
-  <Team />
+<Story />
+<Marquee />
+<Services />
+<DashboardPreview />
+<Portfolio />
+<Pricing />
+<Results />
+<Team />
 </main>
       <Footer />
     </div>
