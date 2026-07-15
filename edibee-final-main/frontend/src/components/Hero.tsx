@@ -61,7 +61,7 @@ export function Hero() {
         >
           <span className="h-1.5 w-1.5 rounded-full bg-honey" />
           <span className="text-xs font-medium uppercase tracking-[0.32em] text-charcoal/60">
-            A Creative Gauri Agency
+            A Creative Growth Agency
           </span>
         </motion.div>
 
