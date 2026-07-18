@@ -14,14 +14,14 @@ const plans: Plan[] = [
   {
     name: "Launch",
     price: "₹8,000",
-    description: "A sharp starting point for brands that need momentum.",
+    description: "Perfect for businesses getting started.",
     featured: false,
     features: ["1 Shoot Day", "4 Reels", "3 Graphics", "5 Stories", "Monthly Report"],
   },
   {
     name: "Elevate",
     price: "₹16,000",
-    description: "Our most popular growth partnership for sustained visibility.",
+    description: "Our most popular growth package.",
     featured: true,
     features: [
       "Branding Kit",
@@ -35,7 +35,7 @@ const plans: Plan[] = [
   {
     name: "Dominate",
     price: "₹25,000",
-    description: "A full-service partnership built for larger campaigns.",
+    description: "Built for brands ready to scale.",
     featured: false,
     features: [
       "Advanced Branding",
@@ -60,55 +60,50 @@ function PricingCard({ plan, index }: { plan: Plan; index: number }) {
         ease: [0.16, 1, 0.3, 1],
       }}
       whileHover={{ y: -10, scale: 1.01 }}
-      className={`relative overflow-hidden rounded-[32px] border transition-all duration-500 ${
+      className={`relative overflow-hidden rounded-[28px] border transition-all duration-500 ${
         plan.featured
-          ? "border-honey bg-ink shadow-[0_0_60px_rgba(243,209,17,.25)]"
+          ? "border-honey/30 bg-ink/95 shadow-[0_18px_40px_rgba(20,22,15,0.12)]"
           : "border-black/10 bg-paper"
       }`}
     >
       {plan.featured && (
-        <div className="absolute right-5 top-5 rounded-full bg-honey px-4 py-2 text-[10px] font-semibold uppercase tracking-[0.2em] text-ink">
+        <div className="absolute right-5 top-5 rounded-full bg-honey/95 px-4 py-2 text-[10px] font-semibold uppercase tracking-[0.2em] text-ink shadow-sm">
           Most Popular
         </div>
       )}
 
-      <div className="p-8 md:p-10">
-        <p
-          className={`mb-3 text-xs uppercase tracking-[0.35em] ${
-            plan.featured ? "text-honey" : "text-charcoal/50"
-          }`}
-        >
+      <div className="p-6">
+        <p className={`mb-4 text-[10px] uppercase tracking-[0.35em] ${plan.featured ? "text-honey" : "text-charcoal/60"}`}>
           {plan.name}
         </p>
 
-        <h3
-          className={`font-display text-5xl leading-none tracking-tight md:text-6xl ${
-            plan.featured ? "text-paper" : "text-ink"
-          }`}
-        >
-          {plan.price}
-        </h3>
+        <div className="flex items-end gap-3">
+          <h3 className={`font-display text-3xl tracking-tight md:text-4xl ${plan.featured ? "text-paper" : "text-ink"}`}>
+            {plan.price}
+          </h3>
+          <span className="pb-1 text-sm text-charcoal/60">/month</span>
+        </div>
 
-        <p className={`mt-4 text-sm leading-6 ${plan.featured ? "text-paper/70" : "text-charcoal/70"}`}>
+        <p className={`mt-3 text-sm leading-6 ${plan.featured ? "text-paper/70" : "text-charcoal/70"}`}>
           {plan.description}
         </p>
 
-        <div className={`my-8 h-px ${plan.featured ? "bg-paper/20" : "bg-black/10"}`} />
+        <div className={`my-6 h-px ${plan.featured ? "bg-paper/20" : "bg-black/10"}`} />
 
-        <div className="space-y-4">
+        <div className="space-y-3">
           {plan.features.map((feature) => (
-            <div key={feature} className="flex items-center gap-3">
-              <div className={`flex h-7 w-7 items-center justify-center rounded-full ${plan.featured ? "bg-honey" : "bg-ink"}`}>
+            <div key={feature} className="flex items-start gap-3">
+              <div className={`flex h-8 w-8 items-center justify-center rounded-full ${plan.featured ? "bg-honey" : "bg-ink"}`}>
                 <Check className={`h-4 w-4 ${plan.featured ? "text-ink" : "text-paper"}`} strokeWidth={2.2} />
               </div>
-              <span className={plan.featured ? "text-paper" : "text-charcoal"}>{feature}</span>
+              <span className={`text-sm ${plan.featured ? "text-paper" : "text-charcoal"}`}>{feature}</span>
             </div>
           ))}
         </div>
 
         <a
           href="#contact"
-          className={`mt-10 inline-flex w-full items-center justify-center rounded-full px-5 py-3 text-sm font-semibold transition-all duration-300 ${
+          className={`mt-8 inline-flex w-full items-center justify-center rounded-full px-5 py-2.5 text-sm font-medium transition duration-300 ${
             plan.featured
               ? "bg-honey text-ink hover:scale-[1.01]"
               : "bg-ink text-paper hover:bg-honey hover:text-ink"
@@ -125,33 +120,31 @@ export function Pricing() {
   return (
     <section
       id="pricing"
-      className="relative overflow-hidden bg-offwhite px-6 py-24 md:px-10 md:py-28"
+      className="relative overflow-hidden bg-offwhite px-6 py-10 md:px-10 md:py-14"
       style={{
         background:
           "radial-gradient(circle at top, rgba(243,209,17,0.12), transparent 45%), #f3edd9",
       }}
     >
-      <div className="mx-auto max-w-[1400px]">
+      <div className="mx-auto max-w-[1200px]">
         <Reveal>
-          <div className="mb-14 flex flex-col gap-8 md:flex-row md:items-end md:justify-between">
-            <div>
-              <p className="mb-4 text-xs uppercase tracking-[0.35em] text-charcoal/50">
-                Pricing
-              </p>
-              <h2 className="font-display leading-[0.88] tracking-[-0.05em] text-ink" style={{ fontSize: "clamp(2.8rem, 5vw, 4.6rem)" }}>
-                Choose your
-                <br />
-                growth partner.
-              </h2>
-            </div>
+          <div className="mb-10 space-y-4">
+            <p className="text-[10px] uppercase tracking-[0.35em] text-charcoal/50">
+              GROWTH PACKAGES
+            </p>
 
-            <p className="max-w-md text-lg leading-relaxed text-charcoal/70">
-              Every package is built around strategy, production, and marketing—not just content creation.
+            <h2 className="font-display text-4xl leading-tight tracking-[-0.03em] text-ink md:text-5xl">
+              Simple packages.
+              <span className="text-honey"> Real growth.</span>
+            </h2>
+
+            <p className="max-w-xl text-sm leading-6 text-charcoal/70">
+              Choose the partnership that fits your business.
             </p>
           </div>
         </Reveal>
 
-        <div className="grid gap-8 lg:grid-cols-3">
+        <div className="grid gap-6 lg:grid-cols-3">
           {plans.map((plan, index) => (
             <PricingCard key={plan.name} plan={plan} index={index} />
           ))}
