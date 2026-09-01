@@ -161,7 +161,7 @@ function VideoTile({ item }: { item: Item }) {
         )}
       </div>
 
-      <figcaption className="mt-2 flex items-baseline justify-between gap-3">
+      <figcaption className="mt-3 flex items-baseline justify-between gap-3">
         <span className="font-display text-sm font-bold tracking-tightest text-[#14160f]">
           {item.name}
         </span>
@@ -173,15 +173,15 @@ function VideoTile({ item }: { item: Item }) {
 
 export function Portfolio() {
   return (
-    <section id="work" className="relative bg-paper px-6 py-12 md:px-10 md:py-16">
+    <section id="work" className="relative bg-paper px-6 py-20 md:px-10 md:py-28">
       <div className="mx-auto max-w-[1200px]">
-        <div className="grid grid-cols-1 gap-5 md:grid-cols-2 md:items-end">
+        <div className="grid grid-cols-1 gap-6 md:grid-cols-2 md:items-end">
           <Reveal y={20}>
             <span className="text-xs font-medium uppercase tracking-[0.32em] text-[#2c2c25]/55">
               ( Selected Work )
             </span>
             <h2
-              className="mt-3 font-display font-extrabold leading-[0.92] tracking-tightest text-[#14160f]"
+              className="mt-4 font-display font-extrabold leading-[0.92] tracking-tightest text-[#14160f]"
               style={{ fontSize: "clamp(2.2rem, 4.4vw, 3.8rem)" }}
             >
               Case studies,
@@ -198,7 +198,7 @@ export function Portfolio() {
         </div>
 
         {/* Row 1 — vertical reels (9:16), kept phone-sized so the section stays compact */}
-        <div className="mx-auto mt-8 grid max-w-[820px] grid-cols-2 gap-3 sm:grid-cols-3 md:gap-4">
+        <div className="mx-auto mt-12 grid max-w-[860px] grid-cols-2 gap-4 sm:grid-cols-3 md:mt-16 md:gap-5">
           {portraits.map((item, i) => (
             <Reveal key={item.name} delay={i * 0.06} y={20}>
               <VideoTile item={item} />
@@ -207,7 +207,7 @@ export function Portfolio() {
         </div>
 
         {/* Row 2 — landscape films (16:9) */}
-        <div className="mt-4 grid grid-cols-1 gap-3 sm:grid-cols-3 md:mt-5 md:gap-4">
+        <div className="mt-4 grid grid-cols-1 gap-4 sm:grid-cols-3 md:mt-5 md:gap-5">
           {landscapes.map((item, i) => (
             <Reveal key={item.name} delay={i * 0.06} y={20}>
               <VideoTile item={item} />
@@ -216,7 +216,7 @@ export function Portfolio() {
         </div>
 
         <Reveal delay={0.15} y={20}>
-          <div className="mt-10 flex flex-col items-center gap-4 text-center">
+          <div className="mt-16 flex flex-col items-center gap-4 text-center md:mt-20">
             <p className="text-[10px] font-semibold uppercase tracking-[0.24em] text-[#2c2c25]/55">
               The next case study could be yours
             </p>
