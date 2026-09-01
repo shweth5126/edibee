@@ -3,7 +3,10 @@ import { useLenis } from "./lib/useLenis";
 import { Navbar } from "./components/Navbar";
 import { Hero } from "./components/Hero";
 import { Story } from "./components/Story";
-import { Services } from "./components/Services";
+// Services section hidden for now — needs licensed / own imagery before it ships.
+// To re-enable: uncomment this import and the <Services /> line below, and the
+// "Services" link in Navbar.tsx. Component file is kept intact.
+// import { Services } from "./components/Services";
 import { Portfolio } from "./components/Portfolio";
 import { Results } from "./components/Results";
 import { Pricing } from "./components/Pricing";
@@ -47,7 +50,7 @@ function App() {
         <Hero />
         <Story />
         <Marquee />
-        <Services />
+        {/* <Services /> — hidden until we have imagery we can use */}
         <Portfolio />
         <Pricing />
         <Results />
