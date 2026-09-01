@@ -13,16 +13,16 @@ const WHATSAPP =
 
 export function Footer() {
   return (
-    <footer id="contact" className="bg-ink px-4 py-10 md:px-6 md:py-14">
+    <footer id="contact" className="bg-ink px-4 py-12 md:px-6 md:py-16">
       <Reveal y={30}>
         <div
-          className="relative mx-auto max-w-[1500px] overflow-hidden rounded-[32px] border border-honey/15 px-6 pt-10 pb-6 md:px-12 md:pt-16 md:pb-10"
+          className="relative mx-auto max-w-[1400px] overflow-hidden rounded-[32px] border border-honey/15 px-7 pt-14 pb-8 md:px-16 md:pt-20 md:pb-12"
           style={{
             background:
               "radial-gradient(120% 80% at 0% 100%, rgba(243,209,17,0.10) 0%, transparent 55%), #f1ead5",
           }}
         >
-          <div className="grid items-center gap-12 md:grid-cols-2 md:gap-16">
+          <div className="grid items-center gap-14 md:grid-cols-2 md:gap-20">
             {/* ── LEFT — wordmark + contact details ─────────────── */}
             <div>
               <span className="text-[10px] font-semibold uppercase tracking-[0.32em] text-ink/50">
@@ -46,7 +46,7 @@ export function Footer() {
                 Ideas create impact.
               </p>
 
-              <div className="mt-8 flex flex-col gap-3 text-sm">
+              <div className="mt-10 flex flex-col gap-4 text-sm">
                 <a
                   href={`mailto:${EMAIL}`}
                   data-testid="footer-email"
@@ -77,7 +77,7 @@ export function Footer() {
             </div>
 
             {/* ── RIGHT — contact form ─────────────────────────── */}
-            <div className="rounded-[24px] border border-ink/10 bg-paper/50 p-6 md:p-8">
+            <div className="rounded-[24px] border border-ink/10 bg-paper/50 p-7 md:p-10">
               <Reveal delay={0.1} y={20}>
                 <h3
                   className="font-display font-extrabold leading-[0.95] tracking-tightest text-ink"
@@ -100,7 +100,7 @@ export function Footer() {
                 target="_blank"
                 rel="noopener noreferrer"
                 data-testid="footer-whatsapp"
-                className="mt-4 inline-flex items-center gap-2 text-[13px] font-semibold text-ink/70 transition-colors duration-300 hover:text-ink"
+                className="mt-6 inline-flex items-center gap-2 text-[13px] font-semibold text-ink/70 transition-colors duration-300 hover:text-ink"
               >
                 <MessageCircle className="h-3.5 w-3.5" strokeWidth={2} />
                 or message us on WhatsApp
@@ -109,7 +109,7 @@ export function Footer() {
           </div>
 
           {/* ── Bottom bar ───────────────────────────────────── */}
-          <div className="mt-12 flex flex-col items-center justify-between gap-3 border-t border-ink/10 pt-6 text-[12px] text-ink/55 sm:flex-row md:mt-14">
+          <div className="mt-16 flex flex-col items-center justify-between gap-3 border-t border-ink/10 pt-8 text-[12px] text-ink/55 sm:flex-row md:mt-20">
             <span>© {new Date().getFullYear()} Edibee Media</span>
             <a
               href="/privacy.html"
@@ -186,7 +186,7 @@ function ContactForm() {
     <form
       onSubmit={handleSubmit}
       data-testid="footer-contact-form"
-      className="mt-7 space-y-4"
+      className="mt-8 space-y-5"
     >
       <Field label="Name" testId="footer-name" value={name} onChange={setName} type="text" />
       <Field
@@ -221,7 +221,7 @@ function ContactForm() {
         type="submit"
         disabled={state === "sending"}
         data-testid="footer-submit"
-        className="group mt-2 inline-flex items-center gap-2 rounded-full bg-ink px-5 py-2.5 text-[13px] font-semibold text-honey transition-all duration-300 hover:bg-honey hover:text-ink disabled:opacity-60"
+        className="group mt-3 inline-flex items-center gap-2 rounded-full bg-ink px-6 py-3 text-[13px] font-semibold text-honey transition-all duration-300 hover:bg-honey hover:text-ink disabled:opacity-60"
       >
         {label}
         <ArrowRight className="h-3.5 w-3.5 transition-transform duration-300 group-hover:translate-x-0.5" />
