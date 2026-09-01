@@ -40,7 +40,7 @@ function Counter({ to, suffix }: { to: number; suffix: string }) {
 
 export function Results() {
   return (
-<section className="relative overflow-hidden bg-offwhite px-6 pt-12 pb-4 md:px-10 md:pt-16 md:pb-6">      <div
+<section className="relative overflow-hidden bg-offwhite px-6 py-20 md:px-10 md:py-28">      <div
         className="pointer-events-none absolute inset-0"
         style={{
           backgroundImage:
@@ -72,7 +72,7 @@ export function Results() {
         {/* Unified Statistics Panel - Compact */}
         <Reveal
           delay={0.2}
-          className="relative mt-15"
+          className="relative mt-16 md:mt-20"
         >
           <div className="relative">
             {/* Top border accent - very subtle */}
