@@ -7,17 +7,24 @@ type Item = {
   category: string;
   video: string;
   poster: string;
+  aspect: "portrait" | "landscape";
 };
 
-/* Six selected pieces. Rename freely. */
+/* Six selected pieces — mixed portrait / landscape. Rename freely. */
 const items: Item[] = [
-  { name: "Rakhandar", category: "Devotional film", video: "/work/work-rakhandar.mp4", poster: "/work/work-rakhandar.jpg" },
-  { name: "Match Day", category: "Event coverage", video: "/work/work-football.mp4", poster: "/work/work-football.jpg" },
-  { name: "Teaser Film", category: "Cinematic interview", video: "/work/work-treaser.mp4", poster: "/work/work-treaser.jpg" },
-  { name: "Origins", category: "Motion graphics", video: "/work/work-worldmap.mp4", poster: "/work/work-worldmap.jpg" },
-  { name: "Summer Campaign", category: "Social reel", video: "/work/work-summer.mp4", poster: "/work/work-summer.jpg" },
-  { name: "Kinetic Titles", category: "Motion graphics", video: "/work/work-motion.mp4", poster: "/work/work-motion.jpg" },
+  { name: "Rakhandar", category: "Devotional film", video: "/work/work-rakhandar.mp4", poster: "/work/work-rakhandar.jpg", aspect: "portrait" },
+  { name: "Match Day", category: "Event coverage", video: "/work/work-football.mp4", poster: "/work/work-football.jpg", aspect: "landscape" },
+  { name: "Origins", category: "Motion graphics", video: "/work/work-worldmap.mp4", poster: "/work/work-worldmap.jpg", aspect: "portrait" },
+  { name: "Teaser Film", category: "Cinematic interview", video: "/work/work-treaser.mp4", poster: "/work/work-treaser.jpg", aspect: "landscape" },
+  { name: "Summer Campaign", category: "Social reel", video: "/work/work-summer.mp4", poster: "/work/work-summer.jpg", aspect: "portrait" },
+  { name: "Kinetic Titles", category: "Motion graphics", video: "/work/work-motion.mp4", poster: "/work/work-motion.jpg", aspect: "landscape" },
 ];
+
+const aspectClass = (a: Item["aspect"]) =>
+  a === "portrait" ? "aspect-[9/16]" : "aspect-video";
+
+const portraits = items.filter((i) => i.aspect === "portrait");
+const landscapes = items.filter((i) => i.aspect === "landscape");
 
 function CtrlBtn({
   onClick,
@@ -112,7 +119,9 @@ function VideoTile({ item }: { item: Item }) {
       <div
         ref={wrapRef}
         onClick={isMobile && !active ? startOnTap : undefined}
-        className="relative aspect-[4/5] w-full overflow-hidden rounded-[14px] border border-black/5 bg-[#14160f] transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:-translate-y-1 group-hover:border-black/15 md:aspect-[16/10]"
+        className={`relative w-full overflow-hidden rounded-[14px] border border-black/5 bg-[#14160f] transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:-translate-y-1 group-hover:border-black/15 ${aspectClass(
+          item.aspect,
+        )}`}
       >
         <video
           ref={videoRef}
@@ -188,9 +197,19 @@ export function Portfolio() {
           </Reveal>
         </div>
 
-        <div className="mt-8 grid grid-cols-2 gap-3 md:grid-cols-3 md:gap-4">
-          {items.map((item, i) => (
-            <Reveal key={item.name} delay={(i % 3) * 0.06} y={20}>
+        {/* Row 1 — vertical reels (9:16), kept phone-sized so the section stays compact */}
+        <div className="mx-auto mt-8 grid max-w-[820px] grid-cols-2 gap-3 sm:grid-cols-3 md:gap-4">
+          {portraits.map((item, i) => (
+            <Reveal key={item.name} delay={i * 0.06} y={20}>
+              <VideoTile item={item} />
+            </Reveal>
+          ))}
+        </div>
+
+        {/* Row 2 — landscape films (16:9) */}
+        <div className="mt-4 grid grid-cols-1 gap-3 sm:grid-cols-3 md:mt-5 md:gap-4">
+          {landscapes.map((item, i) => (
+            <Reveal key={item.name} delay={i * 0.06} y={20}>
               <VideoTile item={item} />
             </Reveal>
           ))}
