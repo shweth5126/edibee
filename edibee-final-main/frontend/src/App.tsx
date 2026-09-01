@@ -1,3 +1,4 @@
+import { Analytics } from "@vercel/analytics/react";
 import { useLenis } from "./lib/useLenis";
 import { Navbar } from "./components/Navbar";
 import { Hero } from "./components/Hero";
@@ -6,8 +7,6 @@ import { Services } from "./components/Services";
 import { Portfolio } from "./components/Portfolio";
 import { Results } from "./components/Results";
 import { Pricing } from "./components/Pricing";
-import { Team } from "./components/Team";
-import { DashboardPreview } from "./components/DashboardPreview";
 import { Footer } from "./components/Footer";
 
 function Marquee() {
@@ -44,18 +43,17 @@ function App() {
   return (
     <div className="relative min-h-screen bg-offwhite">
       <Navbar />
-<main>
-  <Hero />
-<Story />
-<Marquee />
-<Services />
-<DashboardPreview />
-<Portfolio />
-<Pricing />
-<Results />
-<Team />
-</main>
+      <main>
+        <Hero />
+        <Story />
+        <Marquee />
+        <Services />
+        <Portfolio />
+        <Pricing />
+        <Results />
+      </main>
       <Footer />
+      <Analytics />
     </div>
   );
 }

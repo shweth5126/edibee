@@ -1,0 +1,8 @@
+# Local video source masters — not for the repo (huge). Compressed web
+# versions live in edibee-final-main/frontend/public/work/
+/my work to be added/
+*.mov
+
+# OS / editor
+.DS_Store
+node_modules/

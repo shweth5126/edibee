@@ -6,10 +6,8 @@ import { smoothScrollTo } from "../lib/useLenis";
 const links = [
   { label: "Home", href: "#top" },
   { label: "Services", href: "#services" },
-  { label: "Dashboard", href: "#dashboard" },
   { label: "Work", href: "#work" },
-  { label: "Price", href: "#pricing" },
-  { label: "Team", href: "#team" },
+  { label: "Pricing", href: "#pricing" },
 ];
 
 export function Navbar() {
@@ -118,8 +116,8 @@ export function Navbar() {
             data-testid="nav-mobile-drawer"
           >
             <div className="flex items-center justify-between px-6 py-4">
-              <span className="font-display text-2xl font-extrabold tracking-tightest text-white">
-                edibee
+              <span className="font-king-rounded text-2xl text-white">
+                edi<span className="font-king-light">Bee</span>
               </span>
               <button
                 onClick={() => setOpen(false)}

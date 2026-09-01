@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import { motion, useMotionValue, useSpring, useTransform } from "framer-motion";
 import { ArrowUpRight, Play } from "lucide-react";
+import { Wordmark } from "./Wordmark";
 
 export function Hero() {
   const wrapRef = useRef<HTMLDivElement>(null);
@@ -71,10 +72,11 @@ export function Hero() {
   initial={{ opacity: 0, y: 40 }}
   animate={{ opacity: loaded ? 1 : 0, y: loaded ? 0 : 40 }}
   transition={{ duration: 1.1, ease: [0.16, 1, 0.3, 1], delay: 0.05 }}
-  className="font-sans font-extrabold leading-[0.82] tracking-tightest text-ink"
+  className="font-king-rounded leading-[0.82] tracking-[-0.02em] text-ink"
   style={{ fontSize: "clamp(4.5rem, 12vw, 12rem)" }}
 >
-            EDIBEE
+            {/* OG logo: "edi" King Rounded, "Bee" King ExtraLight */}
+            edi<span className="font-king-light">Bee</span>
           </motion.h1>
 
           {/* Bee — natural curved flight in, smooth landing, plays with cursor */}
@@ -132,7 +134,7 @@ export function Hero() {
               >
                 {/* Wing buzz — fast during flight, gently decays on landing */}
                 <motion.img
-                  src="/bee.png"
+                  src="/bee.webp"
                   alt="Edibee bee mascot"
                   className="w-full drop-shadow-[0_40px_60px_rgba(15,17,12,0.28)]"
                   style={{ willChange: "transform", transformOrigin: "center" }}
