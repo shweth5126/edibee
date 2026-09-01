@@ -49,8 +49,8 @@ export function Hero() {
       ref={wrapRef}
       className="relative flex min-h-[100svh] flex-col justify-center overflow-hidden bg-offwhite px-8 pb-16 pt-32 md:px-12 md:pb-20 md:pt-36 lg:px-16"
     >
-      {/* ambient honey glow */}
-      <div className="pointer-events-none absolute left-1/2 top-1/2 h-[80vw] w-[80vw] max-w-[900px] max-h-[900px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-honey/20 blur-[120px]" />
+      {/* ambient honey glow — kept subtle so the wordmark stays crisp */}
+      <div className="pointer-events-none absolute right-[8%] top-[38%] h-[46vw] w-[46vw] max-w-[560px] max-h-[560px] -translate-y-1/2 rounded-full bg-honey/12 blur-[130px]" />
 
       <div className="relative mx-auto w-full max-w-[1280px]">
         {/* eyebrow */}
