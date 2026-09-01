@@ -75,8 +75,7 @@ export function Hero() {
   className="font-king-rounded leading-[0.82] tracking-[-0.02em] text-ink"
   style={{ fontSize: "clamp(4.5rem, 12vw, 12rem)" }}
 >
-            {/* OG logo: "edi" King Rounded, "Bee" King ExtraLight */}
-            edi<span className="font-king-light">Bee</span>
+            <Wordmark />
           </motion.h1>
 
           {/* Bee — natural curved flight in, smooth landing, plays with cursor */}
