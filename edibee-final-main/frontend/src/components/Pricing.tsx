@@ -128,7 +128,7 @@ function PlanCard({
       viewport={{ once: true, margin: "-10% 0px" }}
       transition={{ duration: 0.7, delay: index * 0.1, ease: [0.16, 1, 0.3, 1] }}
       whileHover={{ y: -6 }}
-      className={`relative flex flex-col overflow-hidden rounded-[24px] p-6 ${
+      className={`relative flex flex-col overflow-hidden rounded-[24px] p-6 md:p-8 ${
         plan.popular
           ? "border-2 border-honey/40 bg-ink/95"
           : "border border-black/10 bg-paper"
@@ -158,9 +158,9 @@ function PlanCard({
         {plan.tagline}
       </h3>
 
-      <div className={`my-5 h-px w-full ${plan.popular ? "bg-paper/20" : "bg-black/10"}`} />
+      <div className={`my-6 h-px w-full ${plan.popular ? "bg-paper/20" : "bg-black/10"}`} />
 
-      <ul className="flex flex-1 flex-col gap-2.5">
+      <ul className="flex flex-1 flex-col gap-3">
         {plan.features.map((f) => (
           <li key={f} className="flex items-start gap-2.5">
             <span
@@ -185,7 +185,7 @@ function PlanCard({
         target="_blank"
         rel="noopener noreferrer"
         data-testid={`pricing-cta-${segment}-${plan.name.toLowerCase()}`}
-        className={`mt-6 inline-flex w-full items-center justify-center gap-2 rounded-full px-5 py-2.5 text-sm font-semibold transition-all duration-300 ${
+        className={`mt-8 inline-flex w-full items-center justify-center gap-2 rounded-full px-5 py-3 text-sm font-semibold transition-all duration-300 ${
           plan.popular
             ? "bg-honey text-ink hover:bg-paper"
             : "bg-ink text-paper hover:bg-honey hover:text-ink"
@@ -205,15 +205,15 @@ export function Pricing() {
   return (
     <section
       id="pricing"
-      className="relative overflow-hidden px-6 py-14 md:px-10 md:py-20"
+      className="relative overflow-hidden px-6 py-20 md:px-10 md:py-28"
       style={{
         background:
-          "radial-gradient(circle at top, rgba(243,209,17,0.12), transparent 45%), #f3edd9",
+          "radial-gradient(circle at top, rgba(243,209,17,0.08), transparent 45%), #f3edd9",
       }}
     >
       <div className="mx-auto max-w-[1200px]">
         <Reveal>
-          <div className="mb-8 space-y-4 text-center">
+          <div className="mb-10 space-y-4 text-center md:mb-12">
             <p className="text-[10px] font-semibold uppercase tracking-[0.35em] text-charcoal/50">
               Packages
             </p>
@@ -228,7 +228,7 @@ export function Pricing() {
         </Reveal>
 
         {/* segment toggle */}
-        <div className="mb-10 flex justify-center">
+        <div className="mb-12 flex justify-center md:mb-14">
           <div className="inline-flex rounded-full border border-black/10 bg-paper p-1">
             {(["creator", "brand"] as Segment[]).map((s) => (
               <button
@@ -249,7 +249,7 @@ export function Pricing() {
           </div>
         </div>
 
-        <div className="grid grid-cols-1 gap-4 md:grid-cols-3">
+        <div className="grid grid-cols-1 gap-5 md:grid-cols-3 md:gap-6">
           {plans.map((plan, i) => (
             <PlanCard key={`${segment}-${plan.name}`} plan={plan} index={i} segment={segment} />
           ))}
@@ -257,8 +257,8 @@ export function Pricing() {
 
         {/* à-la-carte single projects */}
         <Reveal delay={0.1}>
-          <div className="mt-14">
-            <div className="mb-6 text-center">
+          <div className="mt-20 md:mt-24">
+            <div className="mb-8 text-center">
               <p className="text-[10px] font-semibold uppercase tracking-[0.35em] text-charcoal/50">
                 Single projects
               </p>
@@ -270,7 +270,7 @@ export function Pricing() {
               </p>
             </div>
 
-            <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-3">
+            <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
               {PROJECTS.map((p) => (
                 <a
                   key={p.name}
@@ -278,7 +278,7 @@ export function Pricing() {
                   target="_blank"
                   rel="noopener noreferrer"
                   data-testid={`pricing-project-${p.name.toLowerCase().replace(/[^a-z]+/g, "-")}`}
-                  className="group flex items-center justify-between gap-3 rounded-2xl border border-black/10 bg-paper px-4 py-3.5 transition-all duration-300 hover:-translate-y-0.5 hover:border-ink/30"
+                  className="group flex items-center justify-between gap-3 rounded-2xl border border-black/10 bg-paper px-5 py-4 transition-all duration-300 hover:-translate-y-0.5 hover:border-ink/30"
                 >
                   <span>
                     <span className="block text-sm font-semibold text-ink">{p.name}</span>
