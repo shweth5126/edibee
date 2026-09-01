@@ -6,7 +6,7 @@ import { Wordmark } from "./Wordmark";
 
 const links = [
   { label: "Home", href: "#top" },
-  { label: "Services", href: "#services" },
+  // { label: "Services", href: "#services" }, // re-add when the Services section is back
   { label: "Work", href: "#work" },
   { label: "Pricing", href: "#pricing" },
 ];
