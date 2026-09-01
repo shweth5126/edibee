@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X, ArrowUpRight, Home } from "lucide-react";
 import { smoothScrollTo } from "../lib/useLenis";
+import { Wordmark } from "./Wordmark";
 
 const links = [
   { label: "Home", href: "#top" },
@@ -117,7 +118,7 @@ export function Navbar() {
           >
             <div className="flex items-center justify-between px-6 py-4">
               <span className="font-king-rounded text-2xl text-white">
-                edi<span className="font-king-light">Bee</span>
+                <Wordmark />
               </span>
               <button
                 onClick={() => setOpen(false)}
