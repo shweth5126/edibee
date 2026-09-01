@@ -1,7 +1,8 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { ArrowRight, Instagram, MessageCircle } from "lucide-react";
+import { ArrowRight, Instagram, MessageCircle, Mail, Phone } from "lucide-react";
 import { Reveal } from "./Reveal";
+import { Wordmark } from "./Wordmark";
 
 const EMAIL = "edibee.grow@gmail.com";
 const PHONE_DISPLAY = "+91 97663 58698";
@@ -21,48 +22,72 @@ export function Footer() {
               "radial-gradient(120% 80% at 0% 100%, rgba(243,209,17,0.10) 0%, transparent 55%), #f1ead5",
           }}
         >
-          <div className="grid gap-10 md:grid-cols-12 md:gap-12">
-            {/* ── LEFT — oversized wordmark ─────────────────────── */}
-            <div className="relative md:col-span-7 overflow-hidden">
-              <motion.h2
+          <div className="grid items-center gap-12 md:grid-cols-2 md:gap-16">
+            {/* ── LEFT — wordmark + contact details ─────────────── */}
+            <div>
+              <span className="text-[10px] font-semibold uppercase tracking-[0.32em] text-ink/50">
+                ( Let's connect )
+              </span>
+              <motion.div
                 initial={{ opacity: 0, y: 24 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-12% 0px" }}
-                transition={{ duration: 1.1, ease: [0.16, 1, 0.3, 1] }}
-                className="font-king-rounded leading-[0.78] tracking-[-0.03em] text-honey"
-                style={{ fontSize: "clamp(4.5rem, 13vw, 13rem)" }}
+                transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
+                className="mt-3 font-king-rounded leading-[0.85] tracking-[-0.03em] text-honey"
+                style={{ fontSize: "clamp(3.2rem, 9vw, 6.5rem)" }}
                 data-testid="footer-wordmark"
               >
-                edi<span className="font-king-light">Bee</span>
-              </motion.h2>
-              <Reveal delay={0.2} y={20}>
-                <p
-                  className="mt-4 font-display italic text-ink/80"
-                  style={{ fontSize: "clamp(1rem, 1.4vw, 1.4rem)" }}
+                <Wordmark />
+              </motion.div>
+              <p
+                className="mt-3 font-display italic text-ink/75"
+                style={{ fontSize: "clamp(1rem, 1.3vw, 1.3rem)" }}
+              >
+                Ideas create impact.
+              </p>
+
+              <div className="mt-8 flex flex-col gap-3 text-sm">
+                <a
+                  href={`mailto:${EMAIL}`}
+                  data-testid="footer-email"
+                  className="inline-flex items-center gap-2.5 font-medium text-ink transition-colors duration-300 hover:text-honey"
                 >
-                  Ideas create impact.
-                </p>
-              </Reveal>
+                  <Mail className="h-4 w-4 text-ink/45" strokeWidth={1.8} />
+                  {EMAIL}
+                </a>
+                <a
+                  href={`tel:${PHONE_TEL}`}
+                  data-testid="footer-phone"
+                  className="inline-flex items-center gap-2.5 font-medium text-ink transition-colors duration-300 hover:text-honey"
+                >
+                  <Phone className="h-4 w-4 text-ink/45" strokeWidth={1.8} />
+                  {PHONE_DISPLAY}
+                </a>
+                <a
+                  href={INSTAGRAM}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  data-testid="footer-social-instagram"
+                  className="inline-flex items-center gap-2.5 font-medium text-ink transition-colors duration-300 hover:text-honey"
+                >
+                  <Instagram className="h-4 w-4 text-ink/45" strokeWidth={1.8} />
+                  @edibee.media
+                </a>
+              </div>
             </div>
 
-            {/* ── RIGHT — Let's connect contact form ────────────── */}
-            <div className="md:col-span-5 md:pl-2">
+            {/* ── RIGHT — contact form ─────────────────────────── */}
+            <div className="rounded-[24px] border border-ink/10 bg-paper/50 p-6 md:p-8">
               <Reveal delay={0.1} y={20}>
-                <span
-                  data-testid="footer-form-eyebrow"
-                  className="text-[10px] font-semibold uppercase tracking-[0.32em] text-ink/55"
-                >
-                  ( Let's connect )
-                </span>
                 <h3
-                  className="mt-3 font-display font-extrabold leading-[0.95] tracking-tightest text-ink"
+                  className="font-display font-extrabold leading-[0.95] tracking-tightest text-ink"
                   style={{ fontSize: "clamp(1.5rem, 2.2vw, 2.2rem)" }}
                 >
                   Start a project,
                   <br />
                   start a conversation<span className="text-honey">.</span>
                 </h3>
-                <p className="mt-3 max-w-sm text-sm leading-relaxed text-ink/65">
+                <p className="mt-3 text-sm leading-relaxed text-ink/65">
                   Tell us a little about your brand and we'll get back within 24
                   hours.
                 </p>
@@ -83,77 +108,15 @@ export function Footer() {
             </div>
           </div>
 
-          {/* ── Bottom row: contact / socials / copy ───────────── */}
-          <div className="mt-12 grid grid-cols-2 gap-6 border-t border-ink/8 pt-6 text-[12px] text-ink/55 md:mt-16 md:grid-cols-4 md:pt-7">
-            {/* Studio */}
-            <div>
-              <span className="text-[10px] font-semibold uppercase tracking-[0.28em] text-ink/45">
-                Studio
-              </span>
-              <a
-                href={`mailto:${EMAIL}`}
-                className="mt-2 block font-medium text-ink transition-colors duration-300 hover:text-honey"
-                data-testid="footer-email"
-              >
-                {EMAIL}
-              </a>
-              <a
-                href={`tel:${PHONE_TEL}`}
-                className="mt-1 block transition-colors duration-300 hover:text-honey"
-                data-testid="footer-phone"
-              >
-                {PHONE_DISPLAY}
-              </a>
-            </div>
-
-            {/* Follow */}
-            <div>
-              <span className="text-[10px] font-semibold uppercase tracking-[0.28em] text-ink/45">
-                Follow
-              </span>
-              <div className="mt-2 flex gap-2.5">
-                <a
-                  href={INSTAGRAM}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label="Instagram"
-                  data-testid="footer-social-instagram"
-                  className="flex h-8 w-8 items-center justify-center rounded-full border border-ink/12 text-ink/60 transition-all duration-300 hover:scale-105 hover:border-ink hover:bg-ink hover:text-honey"
-                >
-                  <Instagram className="h-3.5 w-3.5" strokeWidth={1.8} />
-                </a>
-              </div>
-              <p className="mt-2">@edibee.media</p>
-            </div>
-
-            {/* Chat */}
-            <div>
-              <span className="text-[10px] font-semibold uppercase tracking-[0.28em] text-ink/45">
-                Chat
-              </span>
-              <a
-                href={WHATSAPP}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="mt-2 block font-medium text-ink transition-colors duration-300 hover:text-honey"
-              >
-                WhatsApp us
-              </a>
-            </div>
-
-            {/* Copyright */}
-            <div className="md:text-right">
-              <span className="text-[10px] font-semibold uppercase tracking-[0.28em] text-ink/45">
-                © {new Date().getFullYear()}
-              </span>
-              <p className="mt-2 font-medium text-ink">Edibee Media</p>
-              <a
-                href="/privacy.html"
-                className="mt-1 block transition-colors duration-300 hover:text-honey"
-              >
-                Privacy
-              </a>
-            </div>
+          {/* ── Bottom bar ───────────────────────────────────── */}
+          <div className="mt-12 flex flex-col items-center justify-between gap-3 border-t border-ink/10 pt-6 text-[12px] text-ink/55 sm:flex-row md:mt-14">
+            <span>© {new Date().getFullYear()} Edibee Media</span>
+            <a
+              href="/privacy.html"
+              className="transition-colors duration-300 hover:text-ink"
+            >
+              Privacy Policy
+            </a>
           </div>
         </div>
       </Reveal>
