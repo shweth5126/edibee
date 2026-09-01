@@ -7,6 +7,13 @@ import {
   TrendingUp,
   Lightbulb,
   Layers,
+  Clapperboard,
+  Camera,
+  Aperture,
+  Video,
+  Share2,
+  Gem,
+  Rocket,
 } from "lucide-react";
 import { Reveal } from "./Reveal";
 
@@ -22,25 +29,25 @@ type Tile = {
 
 const TILES: Tile[] = [
   // ── TOP row ──────────────────────────────────────────────────────
-  { label: "Reels",     swatch: "#1f1b14", Icon: Film,      row: 1, col: 1, size: "xs" },
-  { label: "Content",   image: "/services/video-production.jpg", row: 1, col: 2, size: "md" },
-  { label: "Films",     image: "/services/video-editing.jpg",    row: 1, col: 3, size: "sm" },
-  { label: "Editing",   swatch: "#f3d111", Icon: Layers,    row: 1, col: 4, size: "md" },
-  { label: "Photo",     image: "/services/photography.jpg",      row: 1, col: 5, size: "xs" },
+  { label: "Reels",     swatch: "#1f1b14", Icon: Film,         row: 1, col: 1, size: "xs" },
+  { label: "Content",   swatch: "#0f110c", Icon: Clapperboard, row: 1, col: 2, size: "md" },
+  { label: "Films",     swatch: "#f1b40a", Icon: Video,        row: 1, col: 3, size: "sm" },
+  { label: "Editing",   swatch: "#f3d111", Icon: Layers,       row: 1, col: 4, size: "md" },
+  { label: "Photo",     swatch: "#272727", Icon: Camera,       row: 1, col: 5, size: "xs" },
 
   // ── MIDDLE row ───────────────────────────────────────────────────
-  { label: "Lens",      image: "/services/photography.jpg",      row: 2, col: 1, size: "sm" },
-  { label: "Branding",  swatch: "#0f110c", Icon: Palette,   row: 2, col: 2, size: "md" },
-  { label: "Video Production", image: "/services/video-production.jpg", row: 2, col: 3, size: "xl" },
-  { label: "Social",    image: "/services/social-media.jpg",     row: 2, col: 4, size: "md" },
-  { label: "Strategy",  swatch: "#272727", Icon: Lightbulb, row: 2, col: 5, size: "sm" },
+  { label: "Lens",      swatch: "#1f1b14", Icon: Aperture,     row: 2, col: 1, size: "sm" },
+  { label: "Branding",  swatch: "#f3d111", Icon: Palette,      row: 2, col: 2, size: "md" },
+  { label: "Video Production", swatch: "#0f110c", Icon: Video,  row: 2, col: 3, size: "xl" },
+  { label: "Social",    swatch: "#f1b40a", Icon: Share2,       row: 2, col: 4, size: "md" },
+  { label: "Strategy",  swatch: "#272727", Icon: Lightbulb,    row: 2, col: 5, size: "sm" },
 
   // ── BOTTOM row ───────────────────────────────────────────────────
-  { label: "Creative",  swatch: "#f1b40a", Icon: Sparkles,  row: 3, col: 1, size: "xs" },
-  { label: "Marketing", image: "/services/creative-marketing.jpg", row: 3, col: 2, size: "md" },
-  { label: "Brand",     image: "/services/brand-strategy.jpg",   row: 3, col: 3, size: "sm" },
-  { label: "Campaigns", swatch: "#f3d111", Icon: Megaphone,  row: 3, col: 4, size: "md" },
-  { label: "Trends",    swatch: "#1f1b14", Icon: TrendingUp, row: 3, col: 5, size: "xs" },
+  { label: "Creative",  swatch: "#f1b40a", Icon: Sparkles,     row: 3, col: 1, size: "xs" },
+  { label: "Marketing", swatch: "#1f1b14", Icon: Megaphone,    row: 3, col: 2, size: "md" },
+  { label: "Brand",     swatch: "#f3d111", Icon: Gem,          row: 3, col: 3, size: "sm" },
+  { label: "Campaigns", swatch: "#0f110c", Icon: Rocket,       row: 3, col: 4, size: "md" },
+  { label: "Trends",    swatch: "#272727", Icon: TrendingUp,   row: 3, col: 5, size: "xs" },
 ];
 
 /* size → dimensions — scaled down ~15% to compress the cluster */
