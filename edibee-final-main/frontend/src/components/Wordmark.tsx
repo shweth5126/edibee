@@ -14,17 +14,17 @@ export function Wordmark() {
       <span className="relative inline-block">
         i
         <svg
-          viewBox="0 0 24 22"
+          viewBox="0 0 18 20"
           aria-hidden="true"
           className="pointer-events-none absolute left-1/2 -translate-x-1/2"
-          style={{ bottom: "0.52em", width: "0.66em", height: "0.6em", overflow: "visible" }}
+          style={{ bottom: "0.58em", width: "0.32em", height: "0.4em", overflow: "visible" }}
         >
-          <g fill="none" stroke="currentColor" strokeWidth="2.4" strokeLinecap="round">
-            <path d="M12 22 C 10.5 14, 7 10.5, 4.5 4.5" />
-            <path d="M12 22 C 13.5 14, 17 10.5, 19.5 4.5" />
+          <g fill="none" stroke="currentColor" strokeWidth="1.9" strokeLinecap="round">
+            <path d="M9 19 C 8.7 13, 7.8 9, 6.8 5" />
+            <path d="M9 19 C 9.3 13, 10.2 9, 11.2 5" />
           </g>
-          <circle cx="4.5" cy="4" r="2.3" fill="currentColor" />
-          <circle cx="19.5" cy="4" r="2.3" fill="currentColor" />
+          <circle cx="6.8" cy="4.2" r="1.7" fill="currentColor" />
+          <circle cx="11.2" cy="4.2" r="1.7" fill="currentColor" />
         </svg>
       </span>
       <span className="font-king-light">Bee</span>
