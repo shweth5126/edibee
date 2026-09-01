@@ -14,7 +14,7 @@ type Item = {
 const items: Item[] = [
   { name: "Rakhandar", category: "Devotional film", video: "/work/work-rakhandar.mp4", poster: "/work/work-rakhandar.jpg", aspect: "portrait" },
   { name: "Match Day", category: "Event coverage", video: "/work/work-football.mp4", poster: "/work/work-football.jpg", aspect: "landscape" },
-  { name: "Origins", category: "Motion graphics", video: "/work/work-worldmap.mp4", poster: "/work/work-worldmap.jpg", aspect: "portrait" },
+  { name: "Origins", category: "Motion graphics", video: "/work/work-worldmap-2.mp4", poster: "/work/work-worldmap-2.jpg", aspect: "portrait" },
   { name: "Teaser Film", category: "Cinematic interview", video: "/work/work-treaser.mp4", poster: "/work/work-treaser.jpg", aspect: "landscape" },
   { name: "Summer Campaign", category: "Social reel", video: "/work/work-summer.mp4", poster: "/work/work-summer.jpg", aspect: "portrait" },
   { name: "Kinetic Titles", category: "Motion graphics", video: "/work/work-motion.mp4", poster: "/work/work-motion.jpg", aspect: "landscape" },
