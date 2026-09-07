@@ -8,7 +8,7 @@ import { Reveal } from "./Reveal";
  * every CTA opens WhatsApp. Below the packages: à-la-carte single-project options.
  * Edit the `CREATOR`, `BRAND` and `PROJECTS` arrays — plain data, no other config.
  */
-const WA = "https://wa.me/919766358698";
+const WA = "https://wa.me/919730337769";
 const wa = (msg: string) => `${WA}?text=${encodeURIComponent(msg)}`;
 
 type Plan = {
