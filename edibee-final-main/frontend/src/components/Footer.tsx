@@ -5,11 +5,11 @@ import { Reveal } from "./Reveal";
 import { Wordmark } from "./Wordmark";
 
 const EMAIL = "edibee.grow@gmail.com";
-const PHONE_DISPLAY = "+91 97663 58698";
-const PHONE_TEL = "+919766358698";
+const PHONE_DISPLAY = "+91 97303 37769";
+const PHONE_TEL = "+919730337769";
 const INSTAGRAM = "https://www.instagram.com/edibee.media/";
 const WHATSAPP =
-  "https://wa.me/919766358698?text=Hi%20Edibee%2C%20I%27d%20like%20to%20discuss%20a%20project.";
+  "https://wa.me/919730337769?text=Hi%20Edibee%2C%20I%27d%20like%20to%20discuss%20a%20project.";
 
 export function Footer() {
   return (
