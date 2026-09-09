@@ -10,7 +10,7 @@ type Item = {
   aspect: "portrait" | "landscape";
 };
 
-/* Six selected pieces — mixed portrait / landscape. Rename freely. */
+/* Selected pieces — mixed portrait / landscape. Rename freely. */
 const items: Item[] = [
   { name: "Rakhandar", category: "Devotional film", video: "/work/work-rakhandar.mp4", poster: "/work/work-rakhandar.jpg", aspect: "portrait" },
   { name: "Match Day", category: "Event coverage", video: "/work/work-football.mp4", poster: "/work/work-football.jpg", aspect: "landscape" },
@@ -18,6 +18,7 @@ const items: Item[] = [
   { name: "Teaser Film", category: "Cinematic interview", video: "/work/work-treaser.mp4", poster: "/work/work-treaser.jpg", aspect: "landscape" },
   { name: "Summer Campaign", category: "Social reel", video: "/work/work-summer.mp4", poster: "/work/work-summer.jpg", aspect: "portrait" },
   { name: "Kinetic Titles", category: "Motion graphics", video: "/work/work-motion.mp4", poster: "/work/work-motion.jpg", aspect: "landscape" },
+  { name: "Dahi Handi", category: "Event coverage", video: "/work/work-dahihandi.mp4", poster: "/work/work-dahihandi.jpg", aspect: "landscape" },
 ];
 
 const aspectClass = (a: Item["aspect"]) =>
@@ -183,7 +184,7 @@ export function Portfolio() {
         </div>
 
         {/* Row 2 — landscape films (16:9) */}
-        <div className="mt-4 grid grid-cols-1 gap-4 sm:grid-cols-3 md:mt-5 md:gap-5">
+        <div className="mt-4 grid grid-cols-1 gap-4 sm:grid-cols-2 md:mt-5 md:gap-5 lg:grid-cols-4">
           {landscapes.map((item, i) => (
             <Reveal key={item.name} delay={i * 0.06} y={20}>
               <VideoTile item={item} />
