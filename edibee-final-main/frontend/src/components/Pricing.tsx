@@ -212,23 +212,52 @@ export function Pricing() {
       }}
     >
       <div className="mx-auto max-w-[1200px]">
+        {/* ── Primary message: pricing is customized, not off-the-shelf ── */}
         <Reveal>
-          <div className="mb-10 space-y-4 text-center md:mb-12">
+          <div className="mx-auto max-w-3xl text-center">
             <p className="text-[10px] font-semibold uppercase tracking-[0.35em] text-charcoal/50">
-              Packages
+              ( How we price )
             </p>
-            <h2 className="mx-auto max-w-2xl font-display text-3xl leading-tight tracking-[-0.03em] text-ink md:text-5xl">
-              Built to get you noticed<span className="text-honey">.</span>
+            <h2
+              className="mx-auto mt-4 font-display font-extrabold leading-[0.98] tracking-[-0.03em] text-ink"
+              style={{ fontSize: "clamp(2.2rem, 5vw, 3.8rem)" }}
+            >
+              We don't sell packages
+              <br />
+              like other agencies<span className="text-honey">.</span>
             </h2>
-            <p className="mx-auto max-w-xl text-sm leading-6 text-charcoal/70">
-              Whether you're a creator building an audience or a brand scaling
-              presence — pick a lane, book a call, we'll tailor the rest.
+            <p className="mx-auto mt-5 max-w-xl text-[15px] leading-relaxed text-charcoal/70 md:text-base">
+              Every brand's goals, platforms and budget are different — so every
+              quote is built around <em className="not-italic font-semibold text-ink">your</em> requirements,
+              not a fixed menu. Tell us what you're building and we'll price around it.
             </p>
+            <a
+              href={wa("Hi Edibee, I'd like a custom pricing quote for my brand.")}
+              target="_blank"
+              rel="noopener noreferrer"
+              data-testid="pricing-custom-quote-cta"
+              className="group mt-8 inline-flex items-center gap-2 rounded-full bg-ink px-8 py-3.5 text-sm font-semibold text-honey transition-all duration-300 hover:bg-honey hover:text-ink"
+            >
+              Get a Custom Quote
+              <ArrowUpRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+            </a>
+          </div>
+        </Reveal>
+
+        {/* ── Packages, demoted to "just examples" ── */}
+        <Reveal delay={0.1}>
+          <div className="mx-auto mt-20 max-w-xl border-t border-black/10 pt-10 text-center md:mt-24 md:pt-12">
+            <p className="text-[10px] font-semibold uppercase tracking-[0.32em] text-charcoal/45">
+              ( For reference — not fixed menus )
+            </p>
+            <h3 className="mt-3 font-display text-xl font-bold tracking-tight text-ink md:text-2xl">
+              A few examples of what that can look like
+            </h3>
           </div>
         </Reveal>
 
         {/* segment toggle */}
-        <div className="mb-12 flex justify-center md:mb-14">
+        <div className="mb-12 mt-8 flex justify-center md:mb-14">
           <div className="inline-flex rounded-full border border-black/10 bg-paper p-1">
             {(["creator", "brand"] as Segment[]).map((s) => (
               <button
