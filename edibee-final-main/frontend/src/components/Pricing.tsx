@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { Check, Star, MessageCircle } from "lucide-react";
+import { Check, Star, MessageCircle, ArrowUpRight } from "lucide-react";
 import { Reveal } from "./Reveal";
 
 /**
