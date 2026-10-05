@@ -1,4 +1,4 @@
-import { Star, ArrowUpRight } from "lucide-react";
+import { Star, Quote, ArrowUpRight } from "lucide-react";
 import { Reveal } from "./Reveal";
 
 type T = { name: string; role: string; text: string; rating?: number; sample?: boolean };
@@ -19,8 +19,6 @@ const TESTIMONIALS: T[] = [
 ];
 
 const list = TESTIMONIALS.filter((t) => import.meta.env.DEV || !t.sample);
-// 4 copies: the track slides -50% (= 2 copies), so it loops seamlessly on any screen width.
-const row = [...list, ...list, ...list, ...list];
 
 function Card({ t, honey, hidden }: { t: T; honey: boolean; hidden: boolean }) {
   return (
@@ -42,16 +40,37 @@ function Card({ t, honey, hidden }: { t: T; honey: boolean; hidden: boolean }) {
         </div>
         <blockquote className="mt-4 text-[15px] leading-relaxed md:text-base">{t.text}</blockquote>
       </div>
-      <figcaption className="mt-6 flex items-center gap-3">
-        <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-ink font-display text-sm font-bold text-honey">
-          {t.name[0]}
-        </span>
-        <span>
-          <span className="block text-sm font-semibold">{t.name}</span>
-          <span className="block text-xs text-ink/60">{t.role}</span>
+      <figcaption className="mt-6 flex items-center justify-between gap-3">
+        <Quote className="h-7 w-7 shrink-0 fill-current opacity-15" strokeWidth={0} />
+        <span className="flex items-center gap-3">
+          <span className="text-right">
+            <span className="block text-sm font-semibold">{t.name}</span>
+            <span className="block text-xs text-ink/60">{t.role}</span>
+          </span>
+          <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-ink font-display text-sm font-bold text-honey">
+            {t.name[0]}
+          </span>
         </span>
       </figcaption>
     </figure>
+  );
+}
+
+// right → left, slow & continuous; pauses on hover; static + swipeable under reduced-motion.
+// 4 copies: the track slides -50% (= 2 copies), so it loops seamlessly on any screen width.
+function Row({ items, seconds, shift }: { items: T[]; seconds: number; shift: number }) {
+  const row = [...items, ...items, ...items, ...items];
+  return (
+    <div className="group flex overflow-hidden [mask-image:linear-gradient(to_right,transparent,#000_8%,#000_92%,transparent)] motion-reduce:overflow-x-auto">
+      <div
+        className="marquee-track flex shrink-0 gap-5 pr-5 group-hover:[animation-play-state:paused] motion-reduce:[animation:none]"
+        style={{ animationDuration: `${seconds}s` }}
+      >
+        {row.map((t, i) => (
+          <Card key={i} t={t} honey={(i + shift) % 3 === 1} hidden={i >= items.length} />
+        ))}
+      </div>
+    </div>
   );
 }
 
@@ -60,8 +79,8 @@ export function Testimonials() {
 
   return (
     <section id="testimonials" className="relative overflow-hidden bg-ink py-20 md:py-28">
-      <Reveal y={20}>
-        <div className="px-6 text-center">
+      <div className="mx-auto grid max-w-[1200px] gap-6 px-6 md:grid-cols-2 md:items-end md:px-10">
+        <Reveal y={20}>
           <span className="text-xs font-medium uppercase tracking-[0.32em] text-paper/50">
             ( Kind words )
           </span>
@@ -69,21 +88,29 @@ export function Testimonials() {
             className="mt-4 font-display font-extrabold leading-[0.95] tracking-tightest text-paper"
             style={{ fontSize: "clamp(2.2rem, 4.4vw, 3.8rem)" }}
           >
-            Clients, in their own words<span className="text-honey">.</span>
+            What our clients
+            <br />
+            <span className="font-normal italic text-paper/60">say about us</span>
+            <span className="text-honey">.</span>
           </h2>
-        </div>
-      </Reveal>
+        </Reveal>
+        <Reveal delay={0.15} y={20} className="md:justify-self-end md:pb-1">
+          <p className="max-w-sm text-sm leading-relaxed text-paper/60">
+            Kind words from the creators and brands we've made content for.
+          </p>
+        </Reveal>
+      </div>
 
-      {/* right → left, slow & continuous; pauses on hover; static + scrollable if reduced-motion */}
-      <div className="group mt-12 flex overflow-hidden [mask-image:linear-gradient(to_right,transparent,#000_8%,#000_92%,transparent)] motion-reduce:overflow-x-auto md:mt-16">
-        <div
-          className="marquee-track flex shrink-0 gap-5 pr-5 group-hover:[animation-play-state:paused] motion-reduce:[animation:none]"
-          style={{ animationDuration: `${list.length * 14}s` }}
-        >
-          {row.map((t, i) => (
-            <Card key={i} t={t} honey={i % 3 === 1} hidden={i >= list.length} />
-          ))}
-        </div>
+      {/* two offset rows like the reference; a second row only once there's enough to avoid repeats */}
+      <div className="mt-12 space-y-5 md:mt-16">
+        <Row items={list} seconds={list.length * 14} shift={0} />
+        {list.length >= 4 && (
+          <Row
+            items={[...list.slice(Math.floor(list.length / 2)), ...list.slice(0, Math.floor(list.length / 2))]}
+            seconds={list.length * 18}
+            shift={1}
+          />
+        )}
       </div>
 
       <div className="mt-12 text-center md:mt-16">
