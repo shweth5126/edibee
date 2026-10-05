@@ -8,6 +8,7 @@ import { Story } from "./components/Story";
 // "Services" link in Navbar.tsx. Component file is kept intact.
 // import { Services } from "./components/Services";
 import { Portfolio } from "./components/Portfolio";
+import { Testimonials } from "./components/Testimonials";
 import { Results } from "./components/Results";
 import { Pricing } from "./components/Pricing";
 import { Footer } from "./components/Footer";
@@ -52,6 +53,7 @@ function App() {
         <Marquee />
         {/* <Services /> — hidden until we have imagery we can use */}
         <Portfolio />
+        <Testimonials />
         <Pricing />
         <Results />
       </main>

@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import { ArrowRight, Instagram, MessageCircle, Mail, Phone } from "lucide-react";
 import { Reveal } from "./Reveal";
 import { Wordmark } from "./Wordmark";
+import { WEB3FORMS_KEY } from "../lib/web3forms";
 
 const EMAIL = "edibee.grow@gmail.com";
 const PHONE_DISPLAY = "+91 97303 37769";
@@ -127,10 +128,6 @@ export function Footer() {
 /* ─────────────────────────────────────────────────────────── */
 /*  Inline contact form — Web3Forms (emails submissions to us)  */
 /* ─────────────────────────────────────────────────────────── */
-const WEB3FORMS_KEY =
-  (import.meta.env.VITE_WEB3FORMS_KEY as string | undefined) ??
-  "27ccc7b7-c021-43c0-934c-36d87d38f139";
-
 type FormState = "idle" | "sending" | "sent" | "error";
 
 function ContactForm() {
