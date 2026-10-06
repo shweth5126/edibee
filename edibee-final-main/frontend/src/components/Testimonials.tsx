@@ -33,7 +33,7 @@ function Card({ t, honey, hidden }: { t: T; honey: boolean; hidden: boolean }) {
   return (
     <figure
       aria-hidden={hidden}
-      className={`flex w-[300px] shrink-0 flex-col justify-between rounded-[24px] p-6 text-ink md:w-[380px] md:p-8 ${
+      className={`flex w-[230px] shrink-0 flex-col justify-between rounded-2xl p-4 text-ink md:w-[270px] md:p-5 ${
         honey ? "bg-honey" : "bg-paper"
       }`}
     >
@@ -42,21 +42,21 @@ function Card({ t, honey, hidden }: { t: T; honey: boolean; hidden: boolean }) {
           {Array.from({ length: t.rating ?? 5 }, (_, i) => (
             <Star
               key={i}
-              className={`h-4 w-4 ${honey ? "fill-ink text-ink" : "fill-gold text-gold"}`}
+              className={`h-3 w-3 ${honey ? "fill-ink text-ink" : "fill-gold text-gold"}`}
               strokeWidth={0}
             />
           ))}
         </div>
-        <blockquote className="mt-4 text-[15px] leading-relaxed md:text-base">{t.text}</blockquote>
+        <blockquote className="mt-3 text-[13px] leading-snug">{t.text}</blockquote>
       </div>
-      <figcaption className="mt-6 flex items-center justify-between gap-3">
-        <Quote className="h-7 w-7 shrink-0 fill-current opacity-15" strokeWidth={0} />
-        <span className="flex items-center gap-3">
+      <figcaption className="mt-4 flex items-center justify-between gap-2">
+        <Quote className="h-4 w-4 shrink-0 fill-current opacity-15" strokeWidth={0} />
+        <span className="flex items-center gap-2">
           <span className="text-right">
-            <span className="block text-sm font-semibold">{t.name}</span>
-            {t.role && <span className="block text-xs text-ink/60">{t.role}</span>}
+            <span className="block text-xs font-semibold">{t.name}</span>
+            {t.role && <span className="block text-[11px] text-ink/60">{t.role}</span>}
           </span>
-          <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-ink font-display text-sm font-bold text-honey">
+          <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-ink font-display text-xs font-bold text-honey">
             {t.name[0]}
           </span>
         </span>
@@ -72,7 +72,7 @@ function Row({ items, seconds, shift }: { items: T[]; seconds: number; shift: nu
   return (
     <div className="group flex overflow-hidden [mask-image:linear-gradient(to_right,transparent,#000_8%,#000_92%,transparent)] motion-reduce:overflow-x-auto">
       <div
-        className="marquee-track flex shrink-0 gap-5 pr-5 group-hover:[animation-play-state:paused] motion-reduce:[animation:none]"
+        className="marquee-track flex shrink-0 gap-3 pr-3 group-hover:[animation-play-state:paused] motion-reduce:[animation:none]"
         style={{ animationDuration: `${seconds}s` }}
       >
         {row.map((t, i) => (
@@ -120,19 +120,19 @@ export function Testimonials() {
 
       {list.length < 3 ? (
         // too few to loop without gaps/repeats → static centred cards until there are 3+
-        <div className="mt-12 flex flex-wrap justify-center gap-5 px-6 md:mt-16">
+        <div className="mt-12 flex flex-wrap justify-center gap-3 px-6 md:mt-16">
           {list.map((t, i) => (
             <Card key={i} t={t} honey={i % 3 === 1} hidden={false} />
           ))}
         </div>
       ) : (
         // two offset rows like the reference; the second only from 4+ so cards don't repeat
-        <div className="mt-12 space-y-5 md:mt-16">
-          <Row items={list} seconds={list.length * 14} shift={0} />
+        <div className="mt-12 space-y-3 md:mt-16">
+          <Row items={list} seconds={list.length * 11} shift={0} />
           {list.length >= 4 && (
             <Row
               items={[...list.slice(Math.floor(list.length / 2)), ...list.slice(0, Math.floor(list.length / 2))]}
-              seconds={list.length * 18}
+              seconds={list.length * 14}
               shift={1}
             />
           )}
