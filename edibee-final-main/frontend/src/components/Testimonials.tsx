@@ -1,7 +1,7 @@
 import { Star, Quote, ArrowUpRight } from "lucide-react";
 import { Reveal } from "./Reveal";
 
-type T = { name: string; role: string; text: string; rating?: number; sample?: boolean };
+type T = { name: string; role: string; text: string; rating?: number; photo?: string; sample?: boolean };
 
 /**
  * Clients submit at /feedback → it lands in your inbox → paste the approved ones
@@ -16,7 +16,7 @@ const TESTIMONIALS: T[] = [
   { name: "Anonymous", role: "", rating: 5, text: "Worth working with edibee media 👏" },
   { name: "Anonymous", role: "", rating: 5, text: "Working with you was fantastic! the communication was seamless and the results exceeded my expectations." },
   { name: "Anonymous", role: "", rating: 5, text: "Very good work" },
-  { name: "Samruddhi", role: "", rating: 5, text: "I have received them, just went through the deliverables and I must say they are commendable and did an amazing job! I am very much satisfied. Thanks for the effort. Indeed looking forward to future projects." },
+  { name: "Samruddhi", role: "", rating: 5, photo: "/testimonials/samruddhi.jpg", text: "I have received them, just went through the deliverables and I must say they are commendable and did an amazing job! I am very much satisfied. Thanks for the effort. Indeed looking forward to future projects." },
   { name: "Sample Client", role: "Your brand here", sample: true, text: "Quick turnaround and the edits felt genuinely premium." },
   { name: "Sample Client", role: "Your brand here", sample: true, text: "The team made the whole process feel effortless. From the first call to the final reel, everything was clear and on time." },
   { name: "Sample Client", role: "Your brand here", sample: true, text: "Creative, fast, and easy to work with." },
@@ -56,9 +56,13 @@ function Card({ t, honey, hidden }: { t: T; honey: boolean; hidden: boolean }) {
             <span className="block text-xs font-semibold">{t.name}</span>
             {t.role && <span className="block text-[11px] text-ink/60">{t.role}</span>}
           </span>
-          <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-ink font-display text-xs font-bold text-honey">
-            {t.name[0]}
-          </span>
+          {t.photo ? (
+            <img src={t.photo} alt="" loading="lazy" className="h-7 w-7 shrink-0 rounded-full object-cover" />
+          ) : (
+            <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-ink font-display text-xs font-bold text-honey">
+              {t.name[0]}
+            </span>
+          )}
         </span>
       </figcaption>
     </figure>
