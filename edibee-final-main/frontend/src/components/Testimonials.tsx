@@ -11,6 +11,7 @@ type T = { name: string; role: string; text: string; rating?: number; sample?: b
  */
 const TESTIMONIALS: T[] = [
   { name: "Kriti", role: "", rating: 5, text: "Learnt so many new things and had great experience working with the whole team" },
+  { name: "Varad", role: "Cafe", rating: 5, text: "Great working with you edibee" },
   { name: "Sample Client", role: "Your brand here", sample: true, text: "Quick turnaround and the edits felt genuinely premium." },
   { name: "Sample Client", role: "Your brand here", sample: true, text: "The team made the whole process feel effortless. From the first call to the final reel, everything was clear and on time." },
   { name: "Sample Client", role: "Your brand here", sample: true, text: "Creative, fast, and easy to work with." },
