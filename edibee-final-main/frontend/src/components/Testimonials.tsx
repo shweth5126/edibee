@@ -12,6 +12,9 @@ type T = { name: string; role: string; text: string; rating?: number; sample?: b
 const TESTIMONIALS: T[] = [
   { name: "Kriti", role: "", rating: 5, text: "Learnt so many new things and had great experience working with the whole team" },
   { name: "Varad", role: "Cafe", rating: 5, text: "Great working with you edibee" },
+  { name: "Aarav Gawas", role: "AS Visual Studio", rating: 5, text: "Highly recommend Edibee! They make the process seamless with their innovative concepts and top-tier results" },
+  { name: "Anonymous", role: "", rating: 5, text: "Worth working with edibee media 👏" },
+  { name: "Natasha Gill", role: "Gill production", rating: 5, text: "Working with you was fantastic! the communication was seamless and the results exceeded my expectations." },
   { name: "Sample Client", role: "Your brand here", sample: true, text: "Quick turnaround and the edits felt genuinely premium." },
   { name: "Sample Client", role: "Your brand here", sample: true, text: "The team made the whole process feel effortless. From the first call to the final reel, everything was clear and on time." },
   { name: "Sample Client", role: "Your brand here", sample: true, text: "Creative, fast, and easy to work with." },
