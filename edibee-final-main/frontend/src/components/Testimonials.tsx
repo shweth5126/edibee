@@ -4,21 +4,23 @@ import { Reveal } from "./Reveal";
 type T = { name: string; role: string; text: string; rating?: number; sample?: boolean };
 
 /**
- * Real client words only. Clients submit at /feedback → it lands in your inbox →
- * paste the approved ones here (drop `sample`).
- * `sample: true` rows show in `npm run dev` only and are stripped from the
- * production build, so placeholder copy can never go live by accident.
+ * Clients submit at /feedback → it lands in your inbox → paste the approved ones
+ * here WITHOUT `sample`. While no real entry exists, the demo rows below are shown
+ * with a visible "Demo reviews" label (so visitors are never misled); the label
+ * and demos disappear automatically once one real testimonial is added.
  */
 const TESTIMONIALS: T[] = [
-  { name: "Client One", role: "Brand · Role", sample: true, text: "Sample — replace with real feedback. Short lines look great here." },
-  { name: "Client Two", role: "Brand · Role", sample: true, text: "Sample — a slightly longer one so you can see how a medium card sits. The team made the whole process feel effortless and the reels actually moved the needle for us." },
-  { name: "Client Three", role: "Brand · Role", sample: true, text: "Sample — quick and punchy." },
-  { name: "Client Four", role: "Brand · Role", sample: true, text: "Sample — long-form feedback wraps inside the card, so there's room for a proper story about what working together felt like, what changed after, and why you'd recommend it." },
-  { name: "Client Five", role: "Brand · Role", sample: true, text: "Sample — creative, fast, and easy to work with." },
-  { name: "Client Six", role: "Brand · Role", sample: true, text: "Sample — the edits felt premium and the turnaround was quicker than we expected." },
+  { name: "Sample Client", role: "Your brand here", sample: true, text: "Quick turnaround and the edits felt genuinely premium." },
+  { name: "Sample Client", role: "Your brand here", sample: true, text: "The team made the whole process feel effortless. From the first call to the final reel, everything was clear and on time." },
+  { name: "Sample Client", role: "Your brand here", sample: true, text: "Creative, fast, and easy to work with." },
+  { name: "Sample Client", role: "Your brand here", sample: true, text: "We came with a rough idea and left with a content plan we could actually run with. The shoot day was smooth, and the videos looked better than we'd imagined." },
+  { name: "Sample Client", role: "Your brand here", sample: true, text: "Great communication throughout." },
+  { name: "Sample Client", role: "Your brand here", sample: true, text: "Professional, reliable and full of ideas. Would happily work together again." },
 ];
 
-const list = TESTIMONIALS.filter((t) => import.meta.env.DEV || !t.sample);
+const real = TESTIMONIALS.filter((t) => !t.sample);
+const demo = real.length === 0;
+const list = demo ? TESTIMONIALS : real;
 
 function Card({ t, honey, hidden }: { t: T; honey: boolean; hidden: boolean }) {
   return (
@@ -98,6 +100,14 @@ export function Testimonials() {
           <p className="max-w-sm text-sm leading-relaxed text-paper/60">
             Kind words from the creators and brands we've made content for.
           </p>
+          {demo && (
+            <span
+              data-testid="testimonials-demo-label"
+              className="mt-4 inline-block rounded-full border border-paper/25 px-3 py-1 text-[11px] font-medium uppercase tracking-[0.18em] text-paper/70"
+            >
+              Demo reviews — real ones coming soon
+            </span>
+          )}
         </Reveal>
       </div>
 
