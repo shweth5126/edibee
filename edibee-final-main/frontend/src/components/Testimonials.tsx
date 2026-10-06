@@ -10,6 +10,7 @@ type T = { name: string; role: string; text: string; rating?: number; sample?: b
  * and demos disappear automatically once one real testimonial is added.
  */
 const TESTIMONIALS: T[] = [
+  { name: "Kriti", role: "", rating: 5, text: "Learnt so many new things and had great experience working with the whole team" },
   { name: "Sample Client", role: "Your brand here", sample: true, text: "Quick turnaround and the edits felt genuinely premium." },
   { name: "Sample Client", role: "Your brand here", sample: true, text: "The team made the whole process feel effortless. From the first call to the final reel, everything was clear and on time." },
   { name: "Sample Client", role: "Your brand here", sample: true, text: "Creative, fast, and easy to work with." },
@@ -47,7 +48,7 @@ function Card({ t, honey, hidden }: { t: T; honey: boolean; hidden: boolean }) {
         <span className="flex items-center gap-3">
           <span className="text-right">
             <span className="block text-sm font-semibold">{t.name}</span>
-            <span className="block text-xs text-ink/60">{t.role}</span>
+            {t.role && <span className="block text-xs text-ink/60">{t.role}</span>}
           </span>
           <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-ink font-display text-sm font-bold text-honey">
             {t.name[0]}
@@ -111,17 +112,26 @@ export function Testimonials() {
         </Reveal>
       </div>
 
-      {/* two offset rows like the reference; a second row only once there's enough to avoid repeats */}
-      <div className="mt-12 space-y-5 md:mt-16">
-        <Row items={list} seconds={list.length * 14} shift={0} />
-        {list.length >= 4 && (
-          <Row
-            items={[...list.slice(Math.floor(list.length / 2)), ...list.slice(0, Math.floor(list.length / 2))]}
-            seconds={list.length * 18}
-            shift={1}
-          />
-        )}
-      </div>
+      {list.length < 3 ? (
+        // too few to loop without gaps/repeats → static centred cards until there are 3+
+        <div className="mt-12 flex flex-wrap justify-center gap-5 px-6 md:mt-16">
+          {list.map((t, i) => (
+            <Card key={i} t={t} honey={i % 3 === 1} hidden={false} />
+          ))}
+        </div>
+      ) : (
+        // two offset rows like the reference; the second only from 4+ so cards don't repeat
+        <div className="mt-12 space-y-5 md:mt-16">
+          <Row items={list} seconds={list.length * 14} shift={0} />
+          {list.length >= 4 && (
+            <Row
+              items={[...list.slice(Math.floor(list.length / 2)), ...list.slice(0, Math.floor(list.length / 2))]}
+              seconds={list.length * 18}
+              shift={1}
+            />
+          )}
+        </div>
+      )}
 
       <div className="mt-12 text-center md:mt-16">
         <a
