@@ -15,6 +15,8 @@ const TESTIMONIALS: T[] = [
   { name: "Aarav Gawas", role: "AS Visual Studio", rating: 5, text: "Highly recommend Edibee! They make the process seamless with their innovative concepts and top-tier results" },
   { name: "Anonymous", role: "", rating: 5, text: "Worth working with edibee media 👏" },
   { name: "Natasha Gill", role: "Gill production", rating: 5, text: "Working with you was fantastic! the communication was seamless and the results exceeded my expectations." },
+  { name: "Desai", role: "A&D company", rating: 5, text: "Excellent. But but but, it was a word I didn't fully understand before. But after working with Edibee I truly learned what excellent means. Working with Edibee gave me a great experience." },
+  { name: "Anonymous", role: "", rating: 5, text: "Very good work" },
   { name: "Sample Client", role: "Your brand here", sample: true, text: "Quick turnaround and the edits felt genuinely premium." },
   { name: "Sample Client", role: "Your brand here", sample: true, text: "The team made the whole process feel effortless. From the first call to the final reel, everything was clear and on time." },
   { name: "Sample Client", role: "Your brand here", sample: true, text: "Creative, fast, and easy to work with." },
