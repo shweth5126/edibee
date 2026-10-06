@@ -20,7 +20,6 @@ export function Feedback() {
   const [rating, setRating] = useState(0);
   const [tags, setTags] = useState<string[]>([]);
   const [message, setMessage] = useState("");
-  const [publish, setPublish] = useState(true);
   const [bot, setBot] = useState(""); // honeypot
   const [state, setState] = useState<"idle" | "sending" | "sent" | "error">("idle");
 
@@ -48,7 +47,6 @@ export function Feedback() {
           rating: `${rating}/5`,
           liked: tags.join(", "),
           message,
-          ok_to_publish: publish ? "Yes" : "No",
         }),
       });
       const data = await res.json();
@@ -167,16 +165,6 @@ export function Feedback() {
                 />
               </div>
 
-              <label className="flex items-start gap-3 text-sm leading-snug text-ink/70">
-                <input
-                  type="checkbox"
-                  checked={publish}
-                  onChange={(e) => setPublish(e.target.checked)}
-                  className="mt-0.5 h-5 w-5 shrink-0 accent-ink"
-                />
-                It's okay to feature my feedback on Edibee's website.
-              </label>
-
               {/* honeypot — hidden from real users */}
               <input
                 type="text"
@@ -196,6 +184,9 @@ export function Feedback() {
               >
                 {state === "sending" ? "Sending…" : rating ? "Send feedback" : "Tap a star to continue"}
               </button>
+              <p className="text-center text-xs text-ink/50">
+                By sending, you agree your feedback may appear on our website.
+              </p>
               {state === "error" && (
                 <p className="text-center text-sm text-red-700" role="alert">
                   Something went wrong — please try again.
