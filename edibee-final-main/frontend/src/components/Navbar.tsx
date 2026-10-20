@@ -4,6 +4,8 @@ import { Menu, X, ArrowUpRight, Home } from "lucide-react";
 import { smoothScrollTo } from "../lib/useLenis";
 import { Wordmark } from "./Wordmark";
 
+const DASHBOARD_URL = "https://edibeeos.vercel.app";
+
 const links = [
   { label: "Home", href: "#top" },
   // { label: "Services", href: "#services" }, // re-add when the Services section is back
@@ -80,6 +82,17 @@ export function Navbar() {
             })}
           </ul>
 
+          {/* Client dashboard */}
+          <a
+            href={DASHBOARD_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            data-testid="nav-dashboard"
+            className="relative z-10 ml-1 hidden items-center rounded-full border border-ink/20 px-4 py-2 text-[13px] font-semibold text-ink/80 transition-colors duration-300 hover:border-ink hover:text-ink md:inline-flex"
+          >
+            Dashboard
+          </a>
+
           {/* CTA */}
           <a
             href="#contact"
@@ -150,7 +163,16 @@ export function Navbar() {
                   </a>
                 </motion.li>
               ))}
-              <li className="mt-6">
+              <li className="mt-6 flex flex-wrap gap-3">
+                <a
+                  href={DASHBOARD_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  data-testid="nav-dashboard-mobile"
+                  className="inline-flex rounded-full border border-white/30 px-6 py-3.5 text-base font-semibold text-white"
+                >
+                  Dashboard
+                </a>
                 <a
                   href="#contact"
                   onClick={(e) => {
