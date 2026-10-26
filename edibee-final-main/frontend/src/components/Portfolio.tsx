@@ -12,7 +12,6 @@ type Item = {
 
 /* Selected pieces — mixed portrait / landscape. Rename freely. */
 const items: Item[] = [
-  { name: "Rakhandar", category: "Devotional film", video: "/work/work-rakhandar.mp4", poster: "/work/work-rakhandar.jpg", aspect: "portrait" },
   { name: "Match Day", category: "Event coverage", video: "/work/work-football.mp4", poster: "/work/work-football.jpg", aspect: "landscape" },
   { name: "Origins", category: "Motion graphics", video: "/work/work-worldmap-2.mp4", poster: "/work/work-worldmap-2.jpg", aspect: "portrait" },
   { name: "Teaser Film", category: "Cinematic interview", video: "/work/work-treaser.mp4", poster: "/work/work-treaser.jpg", aspect: "landscape" },
@@ -24,14 +23,13 @@ const items: Item[] = [
 const aspectClass = (a: Item["aspect"]) =>
   a === "portrait" ? "aspect-[9/16]" : "aspect-video";
 
-// More reels, shown in a third row below the films — same 9:16 format as row 1.
+// More vertical reels, merged into the first row.
 const moreReels: Item[] = [
-  { name: "Aarti", category: "Devotional film", video: "/work/work-temple.mp4", poster: "/work/work-temple.jpg", aspect: "portrait" },
   { name: "Sevaco", category: "AI-generated ad", video: "/work/work-sevaco.mp4", poster: "/work/work-sevaco.jpg", aspect: "portrait" },
   { name: "AI Trend", category: "AI-generated video", video: "/work/work-aitrend.mp4", poster: "/work/work-aitrend.jpg", aspect: "portrait" },
 ];
 
-const portraits = items.filter((i) => i.aspect === "portrait");
+const portraits = [...items.filter((i) => i.aspect === "portrait"), ...moreReels];
 const landscapes = items.filter((i) => i.aspect === "landscape");
 
 function CtrlBtn({
@@ -182,7 +180,7 @@ export function Portfolio() {
         </div>
 
         {/* Row 1 — vertical reels (9:16), kept phone-sized so the section stays compact */}
-        <div className="mx-auto mt-12 grid max-w-[860px] grid-cols-2 gap-4 sm:grid-cols-3 md:mt-16 md:gap-5">
+        <div className="mx-auto mt-12 grid max-w-[1000px] grid-cols-2 gap-4 sm:grid-cols-4 md:mt-16 md:gap-5">
           {portraits.map((item, i) => (
             <Reveal key={item.name} delay={i * 0.06} y={20}>
               <VideoTile item={item} />
@@ -193,15 +191,6 @@ export function Portfolio() {
         {/* Row 2 — landscape films (16:9) */}
         <div className="mt-4 grid grid-cols-1 gap-4 sm:grid-cols-2 md:mt-5 md:gap-5 lg:grid-cols-4">
           {landscapes.map((item, i) => (
-            <Reveal key={item.name} delay={i * 0.06} y={20}>
-              <VideoTile item={item} />
-            </Reveal>
-          ))}
-        </div>
-
-        {/* Row 3 — more vertical reels (9:16), same format as row 1 */}
-        <div className="mx-auto mt-4 grid max-w-[860px] grid-cols-2 gap-4 sm:grid-cols-3 md:mt-5 md:gap-5">
-          {moreReels.map((item, i) => (
             <Reveal key={item.name} delay={i * 0.06} y={20}>
               <VideoTile item={item} />
             </Reveal>
