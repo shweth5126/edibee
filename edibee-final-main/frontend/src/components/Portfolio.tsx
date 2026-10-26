@@ -188,8 +188,8 @@ export function Portfolio() {
           ))}
         </div>
 
-        {/* Row 2 — landscape films (16:9) */}
-        <div className="mt-4 grid grid-cols-1 gap-4 sm:grid-cols-2 md:mt-5 md:gap-5 lg:grid-cols-4">
+        {/* Row 2 — landscape films (16:9); on desktop it runs a little wider than the section so the films read bigger */}
+        <div className="mt-4 grid grid-cols-1 gap-4 sm:grid-cols-2 md:mt-5 md:gap-5 lg:relative lg:left-1/2 lg:w-[min(1440px,calc(100vw-4rem))] lg:-translate-x-1/2 lg:grid-cols-4">
           {landscapes.map((item, i) => (
             <Reveal key={item.name} delay={i * 0.06} y={20}>
               <VideoTile item={item} />
