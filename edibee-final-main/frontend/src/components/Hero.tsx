@@ -53,7 +53,7 @@ export function Hero() {
             className="pointer-events-none absolute left-[64%] top-[-8%] z-20 hidden w-[26vw] min-w-[170px] max-w-[340px] md:block"
           >
             <img
-              src="/bee.svg"
+              src="/bee.webp" width="1012" height="924"
               alt="Edibee bee mascot"
               className="w-full drop-shadow-[0_28px_36px_rgba(15,17,12,0.16)]"
             />
@@ -120,7 +120,7 @@ tracking-[-0.01em] font-semibold text-ink transition-all duration-300 hover:bord
         className="pointer-events-none absolute bottom-8 right-5 z-20 w-[34vw] max-w-[170px] md:hidden"
       >
         <img
-          src="/bee.svg"
+          src="/bee.webp" width="1012" height="924"
           alt="Edibee bee mascot"
           className="w-full drop-shadow-[0_20px_28px_rgba(15,17,12,0.16)]"
         />
