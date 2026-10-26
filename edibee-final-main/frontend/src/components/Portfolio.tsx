@@ -17,12 +17,19 @@ const items: Item[] = [
   { name: "Origins", category: "Motion graphics", video: "/work/work-worldmap-2.mp4", poster: "/work/work-worldmap-2.jpg", aspect: "portrait" },
   { name: "Teaser Film", category: "Cinematic interview", video: "/work/work-treaser.mp4", poster: "/work/work-treaser.jpg", aspect: "landscape" },
   { name: "Summer Campaign", category: "Social reel", video: "/work/work-summer.mp4", poster: "/work/work-summer.jpg", aspect: "portrait" },
-  { name: "Kinetic Titles", category: "Motion graphics", video: "/work/work-motion.mp4", poster: "/work/work-motion.jpg", aspect: "landscape" },
+  { name: "Kinetic Titles", category: "Motion graphics", video: "/work/work-motion-2.mp4", poster: "/work/work-motion-2.jpg", aspect: "landscape" },
   { name: "Dahi Handi", category: "Event coverage", video: "/work/work-dahihandi.mp4", poster: "/work/work-dahihandi.jpg", aspect: "landscape" },
 ];
 
 const aspectClass = (a: Item["aspect"]) =>
   a === "portrait" ? "aspect-[9/16]" : "aspect-video";
+
+// More reels, shown in a third row below the films — same 9:16 format as row 1.
+const moreReels: Item[] = [
+  { name: "Aarti", category: "Devotional film", video: "/work/work-temple.mp4", poster: "/work/work-temple.jpg", aspect: "portrait" },
+  { name: "Sevaco", category: "AI-generated ad", video: "/work/work-sevaco.mp4", poster: "/work/work-sevaco.jpg", aspect: "portrait" },
+  { name: "AI Trend", category: "AI-generated video", video: "/work/work-aitrend.mp4", poster: "/work/work-aitrend.jpg", aspect: "portrait" },
+];
 
 const portraits = items.filter((i) => i.aspect === "portrait");
 const landscapes = items.filter((i) => i.aspect === "landscape");
@@ -186,6 +193,15 @@ export function Portfolio() {
         {/* Row 2 — landscape films (16:9) */}
         <div className="mt-4 grid grid-cols-1 gap-4 sm:grid-cols-2 md:mt-5 md:gap-5 lg:grid-cols-4">
           {landscapes.map((item, i) => (
+            <Reveal key={item.name} delay={i * 0.06} y={20}>
+              <VideoTile item={item} />
+            </Reveal>
+          ))}
+        </div>
+
+        {/* Row 3 — more vertical reels (9:16), same format as row 1 */}
+        <div className="mx-auto mt-4 grid max-w-[860px] grid-cols-2 gap-4 sm:grid-cols-3 md:mt-5 md:gap-5">
+          {moreReels.map((item, i) => (
             <Reveal key={item.name} delay={i * 0.06} y={20}>
               <VideoTile item={item} />
             </Reveal>
