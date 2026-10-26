@@ -1,52 +1,19 @@
-import { useEffect, useRef, useState } from "react";
-import { motion, useMotionValue, useSpring, useTransform } from "framer-motion";
+import { useEffect, useState } from "react";
+import { motion } from "framer-motion";
 import { ArrowUpRight, Play } from "lucide-react";
 import { Wordmark } from "./Wordmark";
 
 export function Hero() {
-  const wrapRef = useRef<HTMLDivElement>(null);
   const [loaded, setLoaded] = useState(false);
-  const [landed, setLanded] = useState(false); // bee finished flying in
-
-  // Cursor-driven bee movement (more playful — wider range + scale)
-  const mx = useMotionValue(0);
-  const my = useMotionValue(0);
-  const sx = useSpring(mx, { stiffness: 110, damping: 14, mass: 0.9 });
-  const sy = useSpring(my, { stiffness: 110, damping: 14, mass: 0.9 });
-  const beeX = useTransform(sx, [-1, 1], [-90, 90]);
-  const beeY = useTransform(sy, [-1, 1], [-55, 55]);
-  const rotate = useTransform(sx, [-1, 1], [-14, 14]);
-  const tilt = useTransform(sy, [-1, 1], [-9, 9]);
-  // distance-based scale: far cursor → bigger bee
-  const dist = useMotionValue(0);
-  const dSpring = useSpring(dist, { stiffness: 80, damping: 18 });
-  const beeScale = useTransform(dSpring, [0, 1], [1, 1.18]);
 
   useEffect(() => {
     const t = setTimeout(() => setLoaded(true), 60);
-    const onMove = (e: MouseEvent) => {
-      const el = wrapRef.current;
-      if (!el) return;
-      const r = el.getBoundingClientRect();
-      const nx = ((e.clientX - r.left) / r.width) * 2 - 1;
-      const ny = ((e.clientY - r.top) / r.height) * 2 - 1;
-      mx.set(nx);
-      my.set(ny);
-      // distance from center 0..1 — bee scales up when cursor is far
-      const d = Math.min(1, Math.hypot(nx, ny) / 1.2);
-      dist.set(d);
-    };
-    window.addEventListener("mousemove", onMove);
-    return () => {
-      clearTimeout(t);
-      window.removeEventListener("mousemove", onMove);
-    };
-  }, [mx, my, dist]);
+    return () => clearTimeout(t);
+  }, []);
 
   return (
     <section
       id="top"
-      ref={wrapRef}
       className="relative flex min-h-[100svh] flex-col justify-center overflow-hidden bg-offwhite px-8 pb-16 pt-32 md:px-12 md:pb-20 md:pt-36 lg:px-16"
     >
       {/* ambient honey glow — kept subtle so the wordmark stays crisp */}
@@ -78,98 +45,18 @@ export function Hero() {
             <Wordmark />
           </motion.h1>
 
-          {/* Bee — natural curved flight in, smooth landing, plays with cursor */}
+          {/* Mascot — static vector (crisp at any size); just a soft fade-in */}
           <motion.div
-            style={{ x: beeX, y: beeY, rotate: rotate, rotateY: tilt, scale: beeScale }}
-            className="pointer-events-none absolute inset-0 z-20"
+            initial={{ opacity: 0, y: 14 }}
+            animate={{ opacity: loaded ? 1 : 0, y: loaded ? 0 : 14 }}
+            transition={{ duration: 1.1, ease: [0.16, 1, 0.3, 1], delay: 0.3 }}
+            className="pointer-events-none absolute left-[64%] top-[-8%] z-20 hidden w-[26vw] min-w-[170px] max-w-[340px] md:block"
           >
-            {/* Entrance: curved path mimicking a real bee's flight */}
-            <motion.div
-              className="absolute left-[64%] top-[-8%] w-[28vw] max-w-[360px] min-w-[180px]"
-              style={{ willChange: "transform, opacity" }}
-              initial={{
-                x: "85vw",
-                y: "-70vh",
-                scale: 5.2,
-                rotate: -42,
-                opacity: 0,
-              }}
-              animate={
-                loaded
-                  ? {
-                      // organic curved arc — left/down with subtle zigzag
-                      x: ["85vw", "45vw", "12vw", "-4vw", "2vw", "0vw"],
-                      y: ["-70vh", "-30vh", "-6vh", "8vh", "-2vh", "0vh"],
-                      scale: [5.2, 3.4, 1.9, 1.18, 1.03, 1],
-                      rotate: [-42, -28, -8, 6, -2, 0],
-                      opacity: [0, 1, 1, 1, 1, 1],
-                    }
-                  : {}
-              }
-              transition={{
-                duration: 4.2,
-                ease: [0.22, 1, 0.36, 1], // ease-out-quint — gentle, no abrupt stop
-                times: [0, 0.25, 0.5, 0.75, 0.9, 1],
-                delay: 0.3,
-                opacity: { duration: 0.7, delay: 0.3, ease: "easeOut" },
-              }}
-              onAnimationComplete={() => setLanded(true)}
-            >
-              {/* Idle bob — only AFTER landing */}
-              <motion.div
-                animate={
-                  landed
-                    ? { y: [0, -14, 0], rotate: [0, 1.8, 0, -1.8, 0] }
-                    : { y: 0, rotate: 0 }
-                }
-                transition={
-                  landed
-                    ? {
-                        y: { duration: 6.5, repeat: Infinity, ease: "easeInOut" },
-                        rotate: { duration: 8.5, repeat: Infinity, ease: "easeInOut" },
-                      }
-                    : { duration: 0.4 }
-                }
-              >
-                {/* Wing buzz — fast during flight, gently decays on landing */}
-                <motion.img
-                  src="/bee.webp"
-                  alt="Edibee bee mascot"
-                  className="w-full drop-shadow-[0_40px_60px_rgba(15,17,12,0.28)]"
-                  style={{ willChange: "transform", transformOrigin: "center" }}
-                  animate={
-                    landed
-                      ? // ✅ Smooth wing settle — 5 decaying flaps over 1.2s
-                        { scaleY: [1, 0.95, 1, 0.97, 1, 0.99, 1] }
-                      : { scaleY: [1, 0.9, 1, 0.92, 1] }
-                  }
-                  transition={
-                    landed
-                      ? { duration: 1.2, ease: "easeOut" }
-                      : {
-                          duration: 0.12,
-                          repeat: Infinity,
-                          ease: "easeInOut",
-                        }
-                  }
-                />
-              </motion.div>
-
-              {/* Honey motion trail during entrance */}
-              <motion.div
-                aria-hidden
-                initial={{ opacity: 0.55 }}
-                animate={{ opacity: 0 }}
-                transition={{ duration: 4, delay: 0.3, ease: "easeOut" }}
-                className="pointer-events-none absolute inset-0"
-                style={{
-                  background:
-                    "radial-gradient(ellipse 150% 35% at 100% 50%, rgba(243,209,17,0.28) 0%, rgba(243,209,17,0) 60%)",
-                  filter: "blur(28px)",
-                  transform: "translateX(-25%)",
-                }}
-              />
-            </motion.div>
+            <img
+              src="/bee.svg"
+              alt="Edibee bee mascot"
+              className="w-full drop-shadow-[0_28px_36px_rgba(15,17,12,0.16)]"
+            />
           </motion.div>
 
           {/* sub headline */}
@@ -224,6 +111,20 @@ tracking-[-0.01em] font-semibold text-ink transition-all duration-300 hover:bord
           </div>
         </motion.div>
       </div>
+
+      {/* Mascot on phones — own spot (bottom-right, beside the buttons) so it never gets cropped or covers text */}
+      <motion.div
+        initial={{ opacity: 0, y: 14 }}
+        animate={{ opacity: loaded ? 1 : 0, y: loaded ? 0 : 14 }}
+        transition={{ duration: 1.1, ease: [0.16, 1, 0.3, 1], delay: 0.3 }}
+        className="pointer-events-none absolute bottom-8 right-5 z-20 w-[34vw] max-w-[170px] md:hidden"
+      >
+        <img
+          src="/bee.svg"
+          alt="Edibee bee mascot"
+          className="w-full drop-shadow-[0_20px_28px_rgba(15,17,12,0.16)]"
+        />
+      </motion.div>
 
       {/* scroll cue */}
       <motion.div
