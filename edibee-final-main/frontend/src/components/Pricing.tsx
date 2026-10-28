@@ -224,7 +224,7 @@ export function Pricing() {
             >
               We don't sell packages
               <br />
-              like other agencies<span className="text-honey">.</span>
+              like everyone else<span className="text-honey">.</span>
             </h2>
             <p className="mx-auto mt-5 max-w-xl text-[15px] leading-relaxed text-charcoal/70 md:text-base">
               Every brand's goals, platforms and budget are different — so every

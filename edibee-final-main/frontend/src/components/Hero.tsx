@@ -67,10 +67,10 @@ export function Hero() {
             className="mt-1 font-display font-bold leading-[0.88] tracking-[-0.02em] text-ink/90"
             style={{ fontSize: "clamp(2.2rem, 6vw, 6rem)" }}
           >
-            <span className="block">A Creative</span>
+            <span className="block">Your Creative</span>
             <span className="block">
               Growth{" "}
-              <span className="italic font-light text-charcoal/70">agency.</span>
+              <span className="italic font-light text-charcoal/70">partner.</span>
             </span>
           </motion.div>
         </div>
