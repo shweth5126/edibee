@@ -30,8 +30,15 @@ function Counter({ to, suffix }: { to: number; suffix: string }) {
 
   return (
     <span ref={ref}>
-      {val}
-      {suffix}
+      {/* real number for screen readers + crawlers (the animated one starts at 0) */}
+      <span className="sr-only">
+        {to}
+        {suffix}
+      </span>
+      <span aria-hidden="true">
+        {val}
+        {suffix}
+      </span>
     </span>
   );
 }
