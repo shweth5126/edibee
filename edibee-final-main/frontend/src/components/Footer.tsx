@@ -20,13 +20,13 @@ export function Footer() {
           className="relative mx-auto max-w-[1400px] overflow-hidden rounded-[32px] border border-honey/15 px-7 pt-14 pb-8 md:px-16 md:pt-20 md:pb-12"
           style={{
             background:
-              "radial-gradient(120% 80% at 0% 100%, rgba(243,209,17,0.10) 0%, transparent 55%), #f1ead5",
+              "radial-gradient(120% 80% at 0% 100%, rgba(255,235,5,0.14) 0%, transparent 55%), #f8f6dc",
           }}
         >
           <div className="grid items-center gap-14 md:grid-cols-2 md:gap-20">
             {/* ── LEFT — wordmark + contact details ─────────────── */}
             <div>
-              <span className="text-[10px] font-semibold uppercase tracking-[0.32em] text-ink/50">
+              <span className="text-[10px] font-semibold uppercase tracking-[0.32em] text-ink/70">
                 ( Let's connect )
               </span>
               <motion.div
@@ -34,7 +34,7 @@ export function Footer() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-12% 0px" }}
                 transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
-                className="mt-3 font-king-rounded leading-[0.85] tracking-[-0.03em] text-honey"
+                className="mt-3 font-king-rounded leading-[0.85] tracking-[-0.03em] text-ink"
                 style={{ fontSize: "clamp(3.2rem, 9vw, 6.5rem)" }}
                 data-testid="footer-wordmark"
               >

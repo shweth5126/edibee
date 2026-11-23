@@ -58,6 +58,19 @@ export function Navbar() {
             className="pointer-events-none absolute inset-px rounded-full ring-1 ring-white/35"
           />
 
+          {/* Logo — the hero no longer carries the wordmark, so it lives here */}
+          <a
+            href="#top"
+            aria-label="Edibee Media — home"
+            onClick={(e) => {
+              e.preventDefault();
+              smoothScrollTo("#top");
+            }}
+            className="relative z-10 inline-flex items-center pl-3 pr-2 font-king-rounded text-[22px] leading-none tracking-[-0.03em] text-ink md:text-[24px]"
+          >
+            <Wordmark />
+          </a>
+
           {/* Center links — desktop */}
           <ul className="relative z-10 hidden items-center md:flex">
             {links.map((l) => {
@@ -196,7 +209,7 @@ export function Navbar() {
 export function BeeMark({ className = "" }: { className?: string }) {
   return (
     <svg viewBox="0 0 64 64" className={className} fill="none" aria-hidden>
-      <ellipse cx="32" cy="36" rx="14" ry="10" fill="#f3d111" />
+      <ellipse cx="32" cy="36" rx="14" ry="10" fill="#ffeb05" />
       <path
         d="M21 36h22M21 31.5h22M21 40.5h22"
         stroke="#0f110c"
@@ -204,7 +217,7 @@ export function BeeMark({ className = "" }: { className?: string }) {
         strokeLinecap="round"
       />
       <ellipse cx="32" cy="20" rx="10" ry="6.6" fill="#0f110c" />
-      <circle cx="28.5" cy="19.5" r="1.7" fill="#f3d111" />
+      <circle cx="28.5" cy="19.5" r="1.7" fill="#ffeb05" />
       <ellipse cx="23" cy="27" rx="8" ry="5" fill="#ffffff" opacity="0.6" transform="rotate(-25 23 27)" />
       <ellipse cx="41" cy="27" rx="8" ry="5" fill="#ffffff" opacity="0.6" transform="rotate(25 41 27)" />
     </svg>

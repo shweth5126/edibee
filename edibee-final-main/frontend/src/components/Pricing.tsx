@@ -145,7 +145,7 @@ function PlanCard({
 
       <p
         className={`text-[10px] font-semibold uppercase tracking-[0.32em] ${
-          plan.popular ? "text-honey" : "text-charcoal/55"
+          plan.popular ? "text-honey" : "text-charcoal/75"
         }`}
       >
         {plan.name}
@@ -208,7 +208,7 @@ export function Pricing() {
       className="relative overflow-hidden px-6 py-20 md:px-10 md:py-28"
       style={{
         background:
-          "radial-gradient(circle at top, rgba(243,209,17,0.08), transparent 45%), #f3edd9",
+          "radial-gradient(circle at top, rgba(255,235,5,0.10), transparent 45%), #feffea",
       }}
     >
       <div className="mx-auto max-w-[1200px]">
@@ -226,7 +226,7 @@ export function Pricing() {
               <br />
               like everyone else<span className="text-honey">.</span>
             </h2>
-            <p className="mx-auto mt-5 max-w-xl text-[15px] leading-relaxed text-charcoal/70 md:text-base">
+            <p className="mx-auto mt-5 max-w-xl text-[15px] leading-relaxed text-charcoal/80 md:text-base">
               Every brand's goals, platforms and budget are different — so every
               quote is built around <em className="not-italic font-semibold text-ink">your</em> requirements,
               not a fixed menu. Tell us what you're building and we'll price around it.
@@ -269,7 +269,7 @@ export function Pricing() {
                 className={`rounded-full px-6 py-2 text-sm font-semibold capitalize transition-all duration-300 ${
                   segment === s
                     ? "bg-ink text-paper"
-                    : "text-charcoal/60 hover:text-ink"
+                    : "text-charcoal/75 hover:text-ink"
                 }`}
               >
                 {s}
@@ -294,7 +294,7 @@ export function Pricing() {
               <h3 className="mt-2 font-display text-2xl font-bold tracking-tight text-ink md:text-3xl">
                 Just need one thing?
               </h3>
-              <p className="mt-2 text-sm text-charcoal/65">
+              <p className="mt-2 text-sm text-charcoal/80">
                 One-off work, priced per project. Indicative starting rates — final quote on a call.
               </p>
             </div>
@@ -311,10 +311,10 @@ export function Pricing() {
                 >
                   <span>
                     <span className="block text-sm font-semibold text-ink">{p.name}</span>
-                    <span className="block text-xs text-charcoal/55">{p.from}</span>
+                    <span className="block text-xs text-charcoal/75">{p.from}</span>
                   </span>
                   <MessageCircle
-                    className="h-4 w-4 flex-shrink-0 text-charcoal/40 transition-colors duration-300 group-hover:text-honey"
+                    className="h-4 w-4 flex-shrink-0 text-charcoal/75 transition-colors duration-300 group-hover:text-honey"
                     strokeWidth={2}
                   />
                 </a>

@@ -3,7 +3,7 @@ import { useInView, motion } from "framer-motion";
 import { Reveal } from "./Reveal";
 
 const stats = [
-  { value: 2, suffix: "M+", label: "Views", sub: "Average monthly audience reach" },
+  { value: 2, suffix: "M+", label: "Views", sub: "Generated across client and Edibee reels" },
   { value: 50, suffix: "+", label: "Projects", sub: "Completed across industries" },
   { value: 5, suffix: "+", label: "Brands", sub: "Strategic collaborations launched" },
 ];
@@ -51,7 +51,7 @@ export function Results() {
         className="pointer-events-none absolute inset-0"
         style={{
           backgroundImage:
-            "radial-gradient(circle at 50% 0%, rgba(243,209,17,0.04), transparent 35%)",
+            "radial-gradient(circle at 50% 0%, rgba(255,235,5,0.06), transparent 35%)",
         }}
       />
       <div className="mx-auto max-w-5xl">
