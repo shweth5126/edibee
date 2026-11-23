@@ -29,7 +29,13 @@ const moreReels: Item[] = [
   { name: "AI Trend", category: "AI-generated video", video: "/work/work-aitrend.mp4", poster: "/work/work-aitrend.jpg", aspect: "portrait" },
 ];
 
-const portraits = [...items.filter((i) => i.aspect === "portrait"), ...moreReels];
+// Real client shoots first, AI pieces after.
+const realPortraits = items.filter((i) => i.aspect === "portrait");
+const portraits = [
+  ...realPortraits.filter((i) => i.name === "Summer Campaign"),
+  ...realPortraits.filter((i) => i.name !== "Summer Campaign"),
+  ...moreReels,
+];
 const landscapes = items.filter((i) => i.aspect === "landscape");
 
 function CtrlBtn({

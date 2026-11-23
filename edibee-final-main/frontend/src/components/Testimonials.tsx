@@ -47,14 +47,14 @@ function Card({ t, honey, hidden }: { t: T; honey: boolean; hidden: boolean }) {
             />
           ))}
         </div>
-        <blockquote className="mt-3 text-[13px] leading-snug">{t.text}</blockquote>
+        <blockquote className="mt-3 text-[14px] leading-snug">{t.text}</blockquote>
       </div>
       <figcaption className="mt-4 flex items-center justify-between gap-2">
         <Quote className="h-4 w-4 shrink-0 fill-current opacity-15" strokeWidth={0} />
         <span className="flex items-center gap-2">
           <span className="text-right">
             <span className="block text-xs font-semibold">{t.name}</span>
-            {t.role && <span className="block text-[11px] text-ink/60">{t.role}</span>}
+            {t.role && <span className="block text-[11px] text-ink/75">{t.role}</span>}
           </span>
           {t.photo ? (
             <img src={t.photo} alt="" loading="lazy" className="h-7 w-7 shrink-0 rounded-full object-cover" />
@@ -94,7 +94,7 @@ export function Testimonials() {
     <section id="testimonials" className="relative overflow-hidden bg-ink py-20 md:py-28">
       <div className="mx-auto grid max-w-[1200px] gap-6 px-6 md:grid-cols-2 md:items-end md:px-10">
         <Reveal y={20}>
-          <span className="text-xs font-medium uppercase tracking-[0.32em] text-paper/50">
+          <span className="text-xs font-medium uppercase tracking-[0.32em] text-paper/70">
             ( Kind words )
           </span>
           <h2
@@ -103,12 +103,12 @@ export function Testimonials() {
           >
             What our clients
             <br />
-            <span className="font-normal italic text-paper/60">say about us</span>
+            <span className="font-normal italic text-paper/80">say about us</span>
             <span className="text-honey">.</span>
           </h2>
         </Reveal>
         <Reveal delay={0.15} y={20} className="md:justify-self-end md:pb-1">
-          <p className="max-w-sm text-sm leading-relaxed text-paper/60">
+          <p className="max-w-sm text-sm leading-relaxed text-paper/80">
             Kind words from the creators and brands we've made content for.
           </p>
           {demo && (

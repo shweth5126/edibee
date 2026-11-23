@@ -4,16 +4,16 @@
    utilities are generated, and also emits the CSS vars for inline styles. */
 @theme {
   --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
-  --font-display: "Playfair Display", serif;
+  --font-display: "DM Sans", "Inter", ui-sans-serif, system-ui, sans-serif;
   --font-king-rounded: "King Rounded", "Inter", ui-sans-serif, system-ui, sans-serif;
   --font-king-light: "King ExtraLight", "Inter", ui-sans-serif, system-ui, sans-serif;
 
-  --color-honey: #f3d111;
-  --color-gold: #f1b40a;
-  --color-ink: #14160f;
-  --color-charcoal: #2c2c25;
-  --color-paper: #ebe4cf;
-  --color-offwhite: #f3edd9;
+  --color-honey: #ffeb05;
+  --color-gold: #ffd93f;
+  --color-ink: #0b0b0a;
+  --color-charcoal: #24241f;
+  --color-paper: #f6f4d8;
+  --color-offwhite: #feffea;
 }
 
 /* Logo wordmark = "King" family. Files: frontend/public/fonts/king-rounded.woff2

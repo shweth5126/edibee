@@ -9,7 +9,8 @@ import { Story } from "./components/Story";
 // import { Services } from "./components/Services";
 import { Portfolio } from "./components/Portfolio";
 import { Testimonials } from "./components/Testimonials";
-import { Results } from "./components/Results";
+// Results section retired — the stats now sit in the hero (proof on the first screen).
+// import { Results } from "./components/Results";
 import { Pricing } from "./components/Pricing";
 import { Footer } from "./components/Footer";
 
@@ -55,7 +56,6 @@ function App() {
         <Portfolio />
         <Testimonials />
         <Pricing />
-        <Results />
       </main>
       <Footer />
       <Analytics />
