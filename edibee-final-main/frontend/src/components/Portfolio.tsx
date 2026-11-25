@@ -169,7 +169,7 @@ export function Portfolio() {
               ( Selected Work )
             </span>
             <h2
-              className="mt-4 font-display font-extrabold leading-[0.92] tracking-tightest text-[#14160f]"
+              className="mt-4 font-display font-semibold leading-[0.92] tracking-tightest text-[#14160f]"
               style={{ fontSize: "clamp(2.2rem, 4.4vw, 3.8rem)" }}
             >
               Made by the

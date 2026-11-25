@@ -7,6 +7,7 @@ const ease = [0.16, 1, 0.3, 1] as const;
 const stats = [
   { value: "2M+", label: "Views generated" },
   { value: "1,800+", label: "App installs driven" },
+  { value: "7L+", label: "Ad impressions" },
   { value: "50+", label: "Projects delivered" },
 ];
 
@@ -109,7 +110,7 @@ export function Hero() {
             initial={{ opacity: 0, y: 36 }}
             animate={{ opacity: loaded ? 1 : 0, y: loaded ? 0 : 36 }}
             transition={{ duration: 1.1, ease, delay: 0.05 }}
-            className="font-display font-extrabold leading-[0.96] tracking-[-0.04em] text-ink text-balance"
+            className="font-display font-semibold leading-[0.96] tracking-[-0.025em] text-ink text-balance"
             style={{ fontSize: "clamp(2.75rem, 6.2vw, 6rem)" }}
           >
             Content that{" "}
@@ -168,12 +169,12 @@ export function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: loaded ? 1 : 0, y: loaded ? 0 : 20 }}
           transition={{ duration: 1, ease, delay: 0.42 }}
-          className="grid max-w-lg lg:col-start-1 lg:row-start-2 lg:mt-12 lg:self-start grid-cols-3 gap-4 border-t border-ink/12 pt-6"
+          className="grid max-w-xl lg:col-start-1 lg:row-start-2 lg:mt-12 lg:self-start grid-cols-2 gap-x-4 gap-y-5 sm:grid-cols-4 border-t border-ink/12 pt-6"
         >
           {stats.map((s) => (
             <div key={s.label}>
               <dt className="sr-only">{s.label}</dt>
-              <dd className="font-display text-3xl font-extrabold tracking-[-0.04em] text-ink md:text-4xl">
+              <dd className="font-display text-3xl font-semibold tracking-[-0.025em] text-ink md:text-4xl">
                 {s.value}
               </dd>
               <dd className="mt-1 text-[12px] font-semibold uppercase leading-snug tracking-[0.08em] text-charcoal/75">

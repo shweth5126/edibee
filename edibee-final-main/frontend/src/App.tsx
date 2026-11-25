@@ -9,6 +9,7 @@ import { Story } from "./components/Story";
 // import { Services } from "./components/Services";
 import { Portfolio } from "./components/Portfolio";
 import { CaseStudy, Brands } from "./components/CaseStudy";
+import { Capabilities } from "./components/Capabilities";
 import { Testimonials } from "./components/Testimonials";
 // Results section retired — the stats now sit in the hero (proof on the first screen).
 // import { Results } from "./components/Results";
@@ -59,6 +60,7 @@ function App() {
         <Marquee />
         {/* <Services /> — hidden until we have imagery we can use */}
         <CaseStudy />
+        <Capabilities />
         <Portfolio />
         <Testimonials />
         <Pricing />

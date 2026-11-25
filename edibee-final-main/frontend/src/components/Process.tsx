@@ -36,7 +36,7 @@ export function Process() {
               ( How we work )
             </span>
             <h2
-              className="mt-5 font-display font-extrabold leading-[0.9] tracking-tightest"
+              className="mt-5 font-display font-semibold leading-[0.9] tracking-tightest"
               style={{ fontSize: "clamp(2.6rem, 6vw, 6rem)" }}
             >
               Four steps,
@@ -57,7 +57,7 @@ export function Process() {
             <Reveal key={s.n} delay={i * 0.1} y={50}>
               <div className="group">
                 <span
-                  className="font-display font-extrabold leading-none tracking-tightest text-honey/80 transition-colors duration-500 group-hover:text-honey"
+                  className="font-display font-semibold leading-none tracking-tightest text-honey/80 transition-colors duration-500 group-hover:text-honey"
                   style={{ fontSize: "clamp(4rem, 8vw, 7rem)" }}
                 >
                   {s.n}

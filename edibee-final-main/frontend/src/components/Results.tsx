@@ -61,7 +61,7 @@ export function Results() {
             ( By the numbers )
           </span>
           <h2
-            className="font-display font-extrabold leading-[0.92] tracking-tightest text-ink"
+            className="font-display font-semibold leading-[0.92] tracking-tightest text-ink"
             style={{ fontSize: "clamp(3rem, 5vw, 4.6rem)", marginTop: "6px" }}
           >
             Attention you can see
@@ -106,7 +106,7 @@ export function Results() {
                       {/* Number */}
                       <div className="transform transition-transform duration-[450ms] ease-out ">
                         <p
-                          className="font-display font-extrabold leading-none tracking-tightest text-ink"
+                          className="font-display font-semibold leading-none tracking-tightest text-ink"
                           style={{ fontSize: "clamp(3rem, 6vw, 4.8rem)" }}
                         >
                           <Counter to={stat.value} suffix={stat.suffix} />

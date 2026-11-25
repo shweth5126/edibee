@@ -81,7 +81,7 @@ export function Footer() {
             <div className="rounded-[24px] border border-ink/10 bg-paper/50 p-7 md:p-10">
               <Reveal delay={0.1} y={20}>
                 <h3
-                  className="font-display font-extrabold leading-[0.95] tracking-tightest text-ink"
+                  className="font-display font-semibold leading-[0.95] tracking-tightest text-ink"
                   style={{ fontSize: "clamp(1.5rem, 2.2vw, 2.2rem)" }}
                 >
                   Start a project,

@@ -219,7 +219,7 @@ export function Pricing() {
               ( How we price )
             </p>
             <h2
-              className="mx-auto mt-4 font-display font-extrabold leading-[0.98] tracking-[-0.03em] text-ink"
+              className="mx-auto mt-4 font-display font-semibold leading-[0.98] tracking-[-0.03em] text-ink"
               style={{ fontSize: "clamp(2.2rem, 5vw, 3.8rem)" }}
             >
               We don't sell packages

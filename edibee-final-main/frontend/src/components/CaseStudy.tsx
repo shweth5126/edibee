@@ -5,9 +5,9 @@ import { Reveal } from "./Reveal";
  * Every number below comes from the Sevaco campaigns in Meta Ads Manager
  * (Oct–Nov 2026, pulled 25 Nov 2026). Update them when the campaign closes on 30 Nov.
  */
+// The cost per install is the headline proof, so it gets its own card (see CostCard).
 const stats = [
   { value: "1,823", label: "App installs", sub: "in under three weeks of install ads" },
-  { value: "₹4.64", label: "Per install", sub: "Most app categories in India pay ₹20 or more. That's 77% less." },
   { value: "₹17", label: "Per 1,000 views", sub: "India's typical Meta rate is over ₹100 per 1,000." },
   { value: "83", label: "People per ₹1", sub: "1.6 lakh people reached on a ₹1,966 campaign" },
   { value: "22,000+", label: "Watched to the end", sub: "People didn't scroll past. They finished the reel." },
@@ -28,6 +28,45 @@ const delivered = [
   "Reel contest",
 ];
 
+/* ₹4.64 against the ₹20 India starting rate, drawn to scale so the gap is the point. */
+function CostCard() {
+  const ours = 4.64;
+  const typical = 20;
+  return (
+    <div className="flex h-full flex-col justify-between rounded-2xl bg-honey p-6 text-ink md:p-8">
+      <div>
+        <p className="text-[12px] font-semibold uppercase tracking-[0.08em]">Cost per install</p>
+        <p
+          className="mt-3 font-display font-semibold leading-none tracking-[-0.03em]"
+          style={{ fontSize: "clamp(3.5rem, 8vw, 6.5rem)" }}
+        >
+          ₹4.64
+        </p>
+        <p className="mt-3 text-[15px] font-medium">77% less than what most apps in India pay.</p>
+      </div>
+
+      <div className="mt-8 space-y-3" aria-hidden="true">
+        <div>
+          <div className="flex justify-between text-[12px] font-semibold">
+            <span>Edibee for Sevaco</span>
+            <span>₹4.64</span>
+          </div>
+          <div className="mt-1.5 h-3 rounded-full bg-ink/10">
+            <div className="h-3 rounded-full bg-ink" style={{ width: `${(ours / typical) * 100}%` }} />
+          </div>
+        </div>
+        <div>
+          <div className="flex justify-between text-[12px] font-semibold text-ink/65">
+            <span>Most app categories in India</span>
+            <span>₹20+</span>
+          </div>
+          <div className="mt-1.5 h-3 rounded-full bg-ink/25" />
+        </div>
+      </div>
+    </div>
+  );
+}
+
 export function CaseStudy() {
   return (
     <section id="case-study" className="relative bg-ink px-6 py-20 text-offwhite md:px-10 md:py-28">
@@ -37,11 +76,11 @@ export function CaseStudy() {
             ( Case study · Sevaco )
           </span>
           <h2
-            className="mt-4 max-w-4xl font-display font-extrabold leading-[0.95] tracking-tightest"
+            className="mt-4 max-w-4xl font-display font-semibold leading-[0.95] tracking-tightest"
             style={{ fontSize: "clamp(2.2rem, 4.6vw, 4rem)" }}
           >
-            <span className="text-honey">1,823 app installs</span> at ₹4.64 each. Most apps
-            in India pay ₹20 or more<span className="text-honey">.</span>
+            <span className="text-honey">₹4.64</span> per app install. Most apps in India pay
+            ₹20 or more<span className="text-honey">.</span>
           </h2>
           <p className="mt-6 max-w-2xl text-[15px] leading-relaxed text-offwhite/70 md:text-base">
             Sevaco, a Goa app for posting everyday tasks, had gone quiet during a funding delay.
@@ -50,21 +89,18 @@ export function CaseStudy() {
           </p>
         </Reveal>
 
-        <div className="mt-12 grid grid-cols-2 gap-3 md:mt-16 md:grid-cols-5 md:gap-4">
+        <div className="mt-12 grid grid-cols-2 gap-3 md:mt-16 md:grid-cols-4 md:gap-4">
+          <Reveal y={20} className="col-span-2 md:row-span-2">
+            <CostCard />
+          </Reveal>
           {stats.map((s, i) => (
-            <Reveal key={s.label} delay={i * 0.06} y={20}>
-              <div
-                className={`flex h-full flex-col rounded-2xl p-5 ${
-                  i === 0 ? "bg-honey text-ink" : "border border-offwhite/12 bg-offwhite/[0.04]"
-                }`}
-              >
-                <p className="font-display text-3xl font-extrabold tracking-[-0.04em] md:text-[2.1rem]">
+            <Reveal key={s.label} delay={0.06 + i * 0.06} y={20}>
+              <div className="flex h-full flex-col rounded-2xl border border-offwhite/12 bg-offwhite/[0.04] p-5">
+                <p className="font-display text-3xl font-semibold tracking-[-0.025em] md:text-[2.1rem]">
                   {s.value}
                 </p>
                 <p className="mt-2 text-[12px] font-semibold uppercase tracking-[0.08em]">{s.label}</p>
-                <p className={`mt-1 text-[12px] leading-snug ${i === 0 ? "text-ink/70" : "text-offwhite/55"}`}>
-                  {s.sub}
-                </p>
+                <p className="mt-1 text-[12px] leading-snug text-offwhite/55">{s.sub}</p>
               </div>
             </Reveal>
           ))}
