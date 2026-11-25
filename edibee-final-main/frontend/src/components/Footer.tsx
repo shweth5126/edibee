@@ -20,7 +20,7 @@ export function Footer() {
           className="relative mx-auto max-w-[1400px] overflow-hidden rounded-[32px] border border-honey/15 px-7 pt-14 pb-8 md:px-16 md:pt-20 md:pb-12"
           style={{
             background:
-              "radial-gradient(120% 80% at 0% 100%, rgba(255,235,5,0.10) 0%, transparent 55%), #f4f2ec",
+              "radial-gradient(120% 80% at 0% 100%, rgba(255,235,5,0.14) 0%, transparent 55%), #f8f6dc",
           }}
         >
           <div className="grid items-center gap-14 md:grid-cols-2 md:gap-20">
@@ -81,7 +81,7 @@ export function Footer() {
             <div className="rounded-[24px] border border-ink/10 bg-paper/50 p-7 md:p-10">
               <Reveal delay={0.1} y={20}>
                 <h3
-                  className="font-display font-semibold leading-[0.95] tracking-tightest text-ink"
+                  className="font-display font-extrabold leading-[0.95] tracking-tightest text-ink"
                   style={{ fontSize: "clamp(1.5rem, 2.2vw, 2.2rem)" }}
                 >
                   Start a project,
