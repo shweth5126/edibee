@@ -60,17 +60,21 @@ function ReelFan({ loaded }: { loaded: boolean }) {
         </span>
       </motion.div>
 
-      {/* mascot — small, tucked at the corner of the stack */}
-      <motion.img
-        src="/bee.webp"
-        width="1012"
-        height="924"
-        alt="Edibee bee mascot"
+      {/* mascot — top right, in line with the eyebrow; fades in, then floats */}
+      <motion.div
         initial={{ opacity: 0, scale: 0.8 }}
         animate={{ opacity: loaded ? 1 : 0, scale: loaded ? 1 : 0.8 }}
         transition={{ duration: 0.9, ease, delay: 0.7 }}
-        className="pointer-events-none absolute bottom-[2%] right-[-2%] z-30 w-[24%] drop-shadow-[0_18px_24px_rgba(11,11,10,0.22)]"
-      />
+        className="pointer-events-none absolute right-[-1%] top-[-17%] z-30 w-[20%]"
+      >
+        <img
+          src="/bee.webp"
+          width="1012"
+          height="924"
+          alt="Edibee bee mascot"
+          className="bee-float h-auto w-full drop-shadow-[0_18px_24px_rgba(11,11,10,0.22)]"
+        />
+      </motion.div>
     </div>
   );
 }
