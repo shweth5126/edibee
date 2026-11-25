@@ -6,9 +6,16 @@ import { Reveal } from "./Reveal";
  * (Oct–Nov 2026, pulled 25 Nov 2026). Update them when the campaign closes on 30 Nov.
  */
 // The cost per install is the headline proof, so it gets its own card (see CostCard).
-const stats = [
+type Stat = { value: string; label: string; sub: string; vs?: { theirs: string; gap: string } };
+
+const stats: Stat[] = [
   { value: "1,823", label: "App installs", sub: "in under three weeks of install ads" },
-  { value: "₹17", label: "Per 1,000 views", sub: "India's typical Meta rate is over ₹100 per 1,000." },
+  {
+    value: "₹17",
+    label: "Per 1,000 views",
+    sub: "India's typical Meta rate is over ₹100 per 1,000.",
+    vs: { theirs: "₹100+", gap: "83% less" },
+  },
   { value: "83", label: "People per ₹1", sub: "1.6 lakh people reached on a ₹1,966 campaign" },
   { value: "22,000+", label: "Watched to the end", sub: "People didn't scroll past. They finished the reel." },
 ];
@@ -42,7 +49,12 @@ function CostCard() {
         >
           ₹4.64
         </p>
-        <p className="mt-3 text-[15px] font-medium">77% less than what most apps in India pay.</p>
+        <p className="mt-4 flex flex-wrap items-center gap-x-3 gap-y-2">
+          <span className="rounded-full bg-ink px-4 py-1.5 font-display text-2xl font-semibold tracking-[-0.02em] text-honey md:text-3xl">
+            77% less
+          </span>
+          <span className="text-[15px] font-medium">than what most apps in India pay</span>
+        </p>
       </div>
 
       <div className="mt-8 space-y-3" aria-hidden="true">
@@ -95,12 +107,23 @@ export function CaseStudy() {
           </Reveal>
           {stats.map((s, i) => (
             <Reveal key={s.label} delay={0.06 + i * 0.06} y={20}>
-              <div className="flex h-full flex-col rounded-2xl border border-offwhite/12 bg-offwhite/[0.04] p-5">
-                <p className="font-display text-3xl font-semibold tracking-[-0.025em] md:text-[2.1rem]">
+              <div className="flex h-full flex-col rounded-2xl border border-offwhite/12 bg-offwhite/[0.04] p-5 md:p-6">
+                <p className="font-display text-[1.95rem] font-semibold leading-none tracking-[-0.03em] text-honey sm:text-5xl xl:text-6xl">
                   {s.value}
                 </p>
-                <p className="mt-2 text-[12px] font-semibold uppercase tracking-[0.08em]">{s.label}</p>
-                <p className="mt-1 text-[12px] leading-snug text-offwhite/55">{s.sub}</p>
+                <p className="mt-3 text-[12px] font-semibold uppercase tracking-[0.08em]">{s.label}</p>
+                {s.vs ? (
+                  <div className="mt-3 flex flex-wrap items-center gap-2">
+                    <span className="text-[13px] text-offwhite/60">
+                      India: <s className="decoration-offwhite/50">{s.vs.theirs}</s>
+                    </span>
+                    <span className="rounded-full bg-honey px-2.5 py-0.5 text-[13px] font-semibold text-ink">
+                      {s.vs.gap}
+                    </span>
+                  </div>
+                ) : (
+                  <p className="mt-1 text-[13px] leading-snug text-offwhite/60">{s.sub}</p>
+                )}
               </div>
             </Reveal>
           ))}
