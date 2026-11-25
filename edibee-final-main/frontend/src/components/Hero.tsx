@@ -6,8 +6,8 @@ const ease = [0.16, 1, 0.3, 1] as const;
 
 const stats = [
   { value: "2M+", label: "Views generated" },
+  { value: "1,800+", label: "App installs driven" },
   { value: "50+", label: "Projects delivered" },
-  { value: "5+", label: "Brands served" },
 ];
 
 /* Real work, first screen: a reel playing in the middle, two stills fanned behind. */
@@ -130,8 +130,8 @@ export function Hero() {
             className="mt-7 max-w-xl text-[16px] font-medium leading-relaxed tracking-[-0.01em] text-charcoal/85 md:text-lg"
           >
             Edibee is a creative growth partner for brands, creators and local
-            businesses in Goa. Film, photography and social media built to get you
-            noticed, remembered and chosen.
+            businesses in Goa. Campaigns, Meta ads, film and social media built to
+            get you noticed, remembered and chosen.
           </motion.p>
 
           <motion.div

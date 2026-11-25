@@ -8,6 +8,7 @@ import { Story } from "./components/Story";
 // "Services" link in Navbar.tsx. Component file is kept intact.
 // import { Services } from "./components/Services";
 import { Portfolio } from "./components/Portfolio";
+import { CaseStudy, Brands } from "./components/CaseStudy";
 import { Testimonials } from "./components/Testimonials";
 // Results section retired — the stats now sit in the hero (proof on the first screen).
 // import { Results } from "./components/Results";
@@ -16,12 +17,15 @@ import { Footer } from "./components/Footer";
 
 function Marquee() {
   const items = [
+    "Campaign Strategy",
+    "Meta Ads",
     "Video Production",
-    "Photography",
-    "Brand Strategy",
     "Social Media",
-    "Creative Marketing",
-    "Video Editing",
+    "Brand & Mascot Design",
+    "Podcasts",
+    "Event Coverage",
+    "Websites",
+    "Photography",
   ];
   const row = [...items, ...items];
   return (
@@ -50,9 +54,11 @@ function App() {
       <Navbar />
       <main>
         <Hero />
+        <Brands />
         <Story />
         <Marquee />
         {/* <Services /> — hidden until we have imagery we can use */}
+        <CaseStudy />
         <Portfolio />
         <Testimonials />
         <Pricing />

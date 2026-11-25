@@ -172,15 +172,15 @@ export function Portfolio() {
               className="mt-4 font-display font-extrabold leading-[0.92] tracking-tightest text-[#14160f]"
               style={{ fontSize: "clamp(2.2rem, 4.4vw, 3.8rem)" }}
             >
-              Case studies,
+              Made by the
               <br />
-              not showreels<span className="text-honey">.</span>
+              bees<span className="text-honey">.</span>
             </h2>
           </Reveal>
           <Reveal delay={0.15} y={20} className="max-w-md md:justify-self-end md:pb-1">
             <p className="text-[14px] leading-relaxed text-[#2c2c25]/65 md:max-w-sm">
-              Every project starts with a question — what does success look like?
-              Here's what that looked like for a few brands we love.
+              Reels, films, motion graphics and event coverage from brands we've
+              worked with. Every piece started with one question: what does success look like?
             </p>
           </Reveal>
         </div>
