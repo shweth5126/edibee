@@ -160,7 +160,7 @@ export function Brands() {
   return (
     <section aria-label="Brands we've worked with" className="bg-offwhite px-6 py-14 md:px-10 md:py-16">
       <div className="mx-auto max-w-[1200px] text-center">
-        <p className="text-[11px] font-semibold uppercase tracking-[0.24em] text-charcoal/55">
+        <p className="text-[11px] font-semibold uppercase tracking-[0.24em] text-charcoal/65">
           Brands we've worked with
         </p>
         <ul className="mt-6 flex flex-wrap items-center justify-center gap-x-10 gap-y-4 md:gap-x-14">

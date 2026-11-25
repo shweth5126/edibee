@@ -57,7 +57,7 @@ export function Results() {
       <div className="mx-auto max-w-5xl">
         {/* Header - Compact */}
         <Reveal className="flex flex-col items-center text-center">
-          <span className="text-xs font-medium uppercase tracking-[0.32em] text-charcoal/50">
+          <span className="text-xs font-medium uppercase tracking-[0.32em] text-charcoal/65">
             ( By the numbers )
           </span>
           <h2
@@ -122,7 +122,7 @@ export function Results() {
                       </p>
 
                       {/* Description */}
-<p className="mt-5 text-sm text-charcoal/55">                        {stat.sub}
+<p className="mt-5 text-sm text-charcoal/65">                        {stat.sub}
                       </p>
                     </motion.div>
                   </div>

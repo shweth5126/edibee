@@ -165,7 +165,7 @@ export function Portfolio() {
       <div className="mx-auto max-w-[1200px]">
         <div className="grid grid-cols-1 gap-6 md:grid-cols-2 md:items-end">
           <Reveal y={20}>
-            <span className="text-xs font-medium uppercase tracking-[0.32em] text-[#2c2c25]/55">
+            <span className="text-xs font-medium uppercase tracking-[0.32em] text-[#2c2c25]/70">
               ( Selected Work )
             </span>
             <h2
@@ -205,7 +205,7 @@ export function Portfolio() {
 
         <Reveal delay={0.15} y={20}>
           <div className="mt-16 flex flex-col items-center gap-4 text-center md:mt-20">
-            <p className="text-[10px] font-semibold uppercase tracking-[0.24em] text-[#2c2c25]/55">
+            <p className="text-[10px] font-semibold uppercase tracking-[0.24em] text-[#2c2c25]/70">
               The next case study could be yours
             </p>
             <a

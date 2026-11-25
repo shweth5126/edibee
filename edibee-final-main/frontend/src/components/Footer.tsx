@@ -20,7 +20,7 @@ export function Footer() {
           className="relative mx-auto max-w-[1400px] overflow-hidden rounded-[32px] border border-honey/15 px-7 pt-14 pb-8 md:px-16 md:pt-20 md:pb-12"
           style={{
             background:
-              "radial-gradient(120% 80% at 0% 100%, rgba(255,235,5,0.14) 0%, transparent 55%), #f8f6dc",
+              "radial-gradient(120% 80% at 0% 100%, rgba(255,235,5,0.10) 0%, transparent 55%), #f4f2ec",
           }}
         >
           <div className="grid items-center gap-14 md:grid-cols-2 md:gap-20">

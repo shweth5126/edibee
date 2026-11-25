@@ -281,7 +281,7 @@ export function Services() {
             <Reveal delay={0.1}>
               <div className="max-w-[540px]">
                 {/* eyebrow */}
-                <p className="mb-3 text-xs uppercase tracking-[0.35em] text-charcoal/50">
+                <p className="mb-3 text-xs uppercase tracking-[0.35em] text-charcoal/65">
                   What We Build
                 </p>
 

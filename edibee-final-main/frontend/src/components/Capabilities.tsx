@@ -56,7 +56,7 @@ export function Capabilities() {
       <div className="mx-auto max-w-[1200px]">
         <div className="grid grid-cols-1 gap-6 md:grid-cols-2 md:items-end">
           <Reveal y={20}>
-            <span className="text-xs font-medium uppercase tracking-[0.32em] text-charcoal/55">
+            <span className="text-xs font-medium uppercase tracking-[0.32em] text-charcoal/65">
               ( What we do )
             </span>
             <h2
@@ -78,14 +78,14 @@ export function Capabilities() {
           {caps.map((c, i) => (
             <Reveal key={c.name} delay={(i % 4) * 0.06} y={16}>
               <li className="flex h-full flex-col border-b border-ink/10 py-6 sm:pr-6 lg:min-h-[200px]">
-                <span className="text-[12px] font-semibold tabular-nums text-charcoal/40">
+                <span className="text-[12px] font-semibold tabular-nums text-charcoal/55">
                   {String(i + 1).padStart(2, "0")}
                 </span>
                 <h3 className="mt-3 font-display text-xl font-semibold tracking-[-0.02em] text-ink">
                   {c.name}
                 </h3>
                 <p className="mt-2 text-[14px] leading-snug text-charcoal/75">{c.proof}</p>
-                <p className="mt-auto pt-4 text-[11px] font-semibold uppercase tracking-[0.14em] text-charcoal/50">
+                <p className="mt-auto pt-4 text-[11px] font-semibold uppercase tracking-[0.14em] text-charcoal/65">
                   {c.where}
                 </p>
               </li>

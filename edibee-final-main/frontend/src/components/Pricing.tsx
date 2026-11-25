@@ -208,14 +208,14 @@ export function Pricing() {
       className="relative overflow-hidden px-6 py-20 md:px-10 md:py-28"
       style={{
         background:
-          "radial-gradient(circle at top, rgba(255,235,5,0.10), transparent 45%), #feffea",
+          "radial-gradient(circle at top, rgba(255,235,5,0.10), transparent 45%), #faf9f4",
       }}
     >
       <div className="mx-auto max-w-[1200px]">
         {/* ── Primary message: pricing is customized, not off-the-shelf ── */}
         <Reveal>
           <div className="mx-auto max-w-3xl text-center">
-            <p className="text-[10px] font-semibold uppercase tracking-[0.35em] text-charcoal/50">
+            <p className="text-[10px] font-semibold uppercase tracking-[0.35em] text-charcoal/65">
               ( How we price )
             </p>
             <h2
@@ -288,7 +288,7 @@ export function Pricing() {
         <Reveal delay={0.1}>
           <div className="mt-20 md:mt-24">
             <div className="mb-8 text-center">
-              <p className="text-[10px] font-semibold uppercase tracking-[0.35em] text-charcoal/50">
+              <p className="text-[10px] font-semibold uppercase tracking-[0.35em] text-charcoal/65">
                 Single projects
               </p>
               <h3 className="mt-2 font-display text-2xl font-bold tracking-tight text-ink md:text-3xl">

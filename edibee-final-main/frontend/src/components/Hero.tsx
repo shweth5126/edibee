@@ -45,18 +45,18 @@ function ReelFan({ loaded }: { loaded: boolean }) {
         className={`${card} left-1/2 top-0 z-20 aspect-[9/16] w-[42%] -translate-x-1/2 ring-4 ring-offwhite`}
       >
         <video
-          src="/work/work-summer.mp4"
-          poster="/work/work-summer.jpg"
+          src="/work/work-sevaco-hero.mp4"
+          poster="/work/work-sevaco-hero.jpg"
           autoPlay
           muted
           loop
           playsInline
           preload="metadata"
-          aria-label="Summer Campaign social reel by Edibee"
+          aria-label="Sevaco founder reel by Edibee"
           className="h-full w-full object-cover"
         />
         <span className="absolute left-3 top-3 rounded-full bg-black/55 px-2.5 py-1 text-[10px] font-semibold uppercase tracking-[0.14em] text-white backdrop-blur">
-          Social reel
+          Sevaco · Founder reel
         </span>
       </motion.div>
 
@@ -89,7 +89,7 @@ export function Hero() {
       className="relative overflow-hidden bg-offwhite px-6 pb-16 pt-28 md:px-12 md:pb-20 md:pt-36 lg:flex lg:min-h-[100svh] lg:items-center lg:px-16"
     >
       {/* ambient yellow glow behind the reels */}
-      <div className="pointer-events-none absolute right-[6%] top-[40%] h-[44vw] w-[44vw] max-h-[620px] max-w-[620px] -translate-y-1/2 rounded-full bg-honey/25 blur-[140px]" />
+      <div className="pointer-events-none absolute right-[6%] top-[40%] h-[44vw] w-[44vw] max-h-[620px] max-w-[620px] -translate-y-1/2 rounded-full bg-honey/15 blur-[140px]" />
 
       <div className="relative mx-auto grid w-full max-w-[1280px] items-center gap-12 lg:grid-cols-[1.08fr_0.92fr] lg:gap-x-10 lg:gap-y-0">
         {/* ── copy ── */}
