@@ -185,18 +185,18 @@ export function Portfolio() {
           </Reveal>
         </div>
 
-        {/* Row 1 — vertical reels (9:16), kept phone-sized so the section stays compact */}
-        <div className="mx-auto mt-12 grid max-w-[1000px] grid-cols-2 gap-4 sm:grid-cols-4 md:mt-16 md:gap-5">
-          {portraits.map((item, i) => (
+        {/* Row 1 — landscape films (16:9); on desktop it runs a little wider than the section so the films read bigger */}
+        <div className="mt-12 grid grid-cols-1 gap-4 sm:grid-cols-2 md:mt-16 md:gap-5 lg:relative lg:left-1/2 lg:w-[min(1440px,calc(100vw-4rem))] lg:-translate-x-1/2 lg:grid-cols-4">
+          {landscapes.map((item, i) => (
             <Reveal key={item.name} delay={i * 0.06} y={20}>
               <VideoTile item={item} />
             </Reveal>
           ))}
         </div>
 
-        {/* Row 2 — landscape films (16:9); on desktop it runs a little wider than the section so the films read bigger */}
-        <div className="mt-4 grid grid-cols-1 gap-4 sm:grid-cols-2 md:mt-5 md:gap-5 lg:relative lg:left-1/2 lg:w-[min(1440px,calc(100vw-4rem))] lg:-translate-x-1/2 lg:grid-cols-4">
-          {landscapes.map((item, i) => (
+        {/* Row 2 — vertical reels (9:16), kept phone-sized so the section stays compact */}
+        <div className="mx-auto mt-4 grid max-w-[1000px] grid-cols-2 gap-4 sm:grid-cols-4 md:mt-5 md:gap-5">
+          {portraits.map((item, i) => (
             <Reveal key={item.name} delay={i * 0.06} y={20}>
               <VideoTile item={item} />
             </Reveal>
