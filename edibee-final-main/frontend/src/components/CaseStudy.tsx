@@ -6,11 +6,11 @@ import { Reveal } from "./Reveal";
  * (Oct–Nov 2026, pulled 25 Nov 2026). Update them when the campaign closes on 30 Nov.
  */
 const stats = [
-  { value: "1,823", label: "App installs", sub: "from Meta install ads" },
-  { value: "₹4.64", label: "Per install", sub: "average cost across install campaigns" },
-  { value: "7 lakh+", label: "Ad impressions", sub: "across six campaigns" },
-  { value: "1.6 lakh", label: "People reached", sub: "by one awareness campaign, for ₹1,966" },
-  { value: "22,000+", label: "Full video watches", sub: "people who watched our reels to the end" },
+  { value: "1,823", label: "App installs", sub: "in under three weeks of install ads" },
+  { value: "₹4.64", label: "Per install", sub: "Most app categories in India pay ₹20 or more. That's 77% less." },
+  { value: "₹17", label: "Per 1,000 views", sub: "India's typical Meta rate is over ₹100 per 1,000." },
+  { value: "83", label: "People per ₹1", sub: "1.6 lakh people reached on a ₹1,966 campaign" },
+  { value: "22,000+", label: "Watched to the end", sub: "People didn't scroll past. They finished the reel." },
 ];
 
 const delivered = [
@@ -40,13 +40,13 @@ export function CaseStudy() {
             className="mt-4 max-w-4xl font-display font-extrabold leading-[0.95] tracking-tightest"
             style={{ fontSize: "clamp(2.2rem, 4.6vw, 4rem)" }}
           >
-            How we drove <span className="text-honey">1,823 app installs</span> for a Goa
-            startup at ₹4.64 each<span className="text-honey">.</span>
+            <span className="text-honey">1,823 app installs</span> at ₹4.64 each. Most apps
+            in India pay ₹20 or more<span className="text-honey">.</span>
           </h2>
           <p className="mt-6 max-w-2xl text-[15px] leading-relaxed text-offwhite/70 md:text-base">
             Sevaco, a Goa app for posting everyday tasks, had gone quiet during a funding delay.
-            They asked for a real marketing campaign, not just reels. We ran the whole thing for
-            two months: the story, the content, the ads and the app itself.
+            They didn't want just reels. They wanted a real campaign. So we ran all of it for two
+            months, from the founder's story to the ads that put the app on phones.
           </p>
         </Reveal>
 
@@ -85,8 +85,26 @@ export function CaseStudy() {
                 </li>
               ))}
             </ul>
-            <p className="mt-6 text-[12px] text-offwhite/40">
-              Figures from Meta Ads Manager, Oct–Nov 2026.
+            <p className="mt-6 text-[12px] leading-relaxed text-offwhite/40">
+              Sevaco figures from Meta Ads Manager, Oct–Nov 2026. India benchmarks:{" "}
+              <a
+                href="https://vmobify.com/blog/app-install-cost-india"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="underline decoration-offwhite/25 underline-offset-2 hover:text-offwhite/70"
+              >
+                install costs by app category
+              </a>{" "}
+              and{" "}
+              <a
+                href="https://productgrowth.in/numbers/meta-ads-cpm-india/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="underline decoration-offwhite/25 underline-offset-2 hover:text-offwhite/70"
+              >
+                Meta ad rates in India
+              </a>
+              .
             </p>
           </div>
         </Reveal>
@@ -100,7 +118,7 @@ export function CaseStudy() {
  * Before going live: confirm each brand is happy to be listed. To use real logos,
  * drop monochrome SVG/PNGs in /public/brands/ and swap the <span> for an <img>.
  */
-const brands = ["Sevaco", "DNA Fitness", "TechNation", "Nucleus", "AS Visual Studio"];
+const brands = ["Sevaco", "DNA Fitness", "Nucleus"];
 
 export function Brands() {
   return (
