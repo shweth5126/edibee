@@ -57,11 +57,11 @@ export function Results() {
       <div className="mx-auto max-w-5xl">
         {/* Header - Compact */}
         <Reveal className="flex flex-col items-center text-center">
-          <span className="text-xs font-medium uppercase tracking-[0.32em] text-charcoal/50">
+          <span className="text-xs font-medium uppercase tracking-[0.32em] text-charcoal/65">
             ( By the numbers )
           </span>
           <h2
-            className="font-display font-extrabold leading-[0.92] tracking-tightest text-ink"
+            className="font-display font-semibold leading-[0.92] tracking-tightest text-ink"
             style={{ fontSize: "clamp(3rem, 5vw, 4.6rem)", marginTop: "6px" }}
           >
             Attention you can see
@@ -106,7 +106,7 @@ export function Results() {
                       {/* Number */}
                       <div className="transform transition-transform duration-[450ms] ease-out ">
                         <p
-                          className="font-display font-extrabold leading-none tracking-tightest text-ink"
+                          className="font-display font-semibold leading-none tracking-tightest text-ink"
                           style={{ fontSize: "clamp(3rem, 6vw, 4.8rem)" }}
                         >
                           <Counter to={stat.value} suffix={stat.suffix} />
@@ -122,7 +122,7 @@ export function Results() {
                       </p>
 
                       {/* Description */}
-<p className="mt-5 text-sm text-charcoal/55">                        {stat.sub}
+<p className="mt-5 text-sm text-charcoal/65">                        {stat.sub}
                       </p>
                     </motion.div>
                   </div>

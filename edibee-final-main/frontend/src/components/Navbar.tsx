@@ -9,6 +9,7 @@ const DASHBOARD_URL = "https://edibeeos.vercel.app";
 const links = [
   { label: "Home", href: "#top" },
   // { label: "Services", href: "#services" }, // re-add when the Services section is back
+  { label: "Results", href: "#case-study" },
   { label: "Work", href: "#work" },
   { label: "Pricing", href: "#pricing" },
 ];

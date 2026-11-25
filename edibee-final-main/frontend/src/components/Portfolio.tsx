@@ -165,22 +165,22 @@ export function Portfolio() {
       <div className="mx-auto max-w-[1200px]">
         <div className="grid grid-cols-1 gap-6 md:grid-cols-2 md:items-end">
           <Reveal y={20}>
-            <span className="text-xs font-medium uppercase tracking-[0.32em] text-[#2c2c25]/55">
+            <span className="text-xs font-medium uppercase tracking-[0.32em] text-[#2c2c25]/70">
               ( Selected Work )
             </span>
             <h2
-              className="mt-4 font-display font-extrabold leading-[0.92] tracking-tightest text-[#14160f]"
+              className="mt-4 font-display font-semibold leading-[0.92] tracking-tightest text-[#14160f]"
               style={{ fontSize: "clamp(2.2rem, 4.4vw, 3.8rem)" }}
             >
-              Case studies,
+              Made by the
               <br />
-              not showreels<span className="text-honey">.</span>
+              bees<span className="text-honey">.</span>
             </h2>
           </Reveal>
           <Reveal delay={0.15} y={20} className="max-w-md md:justify-self-end md:pb-1">
             <p className="text-[14px] leading-relaxed text-[#2c2c25]/65 md:max-w-sm">
-              Every project starts with a question — what does success look like?
-              Here's what that looked like for a few brands we love.
+              Reels, films, motion graphics and event coverage from brands we've
+              worked with. Every piece started with one question: what does success look like?
             </p>
           </Reveal>
         </div>
@@ -205,7 +205,7 @@ export function Portfolio() {
 
         <Reveal delay={0.15} y={20}>
           <div className="mt-16 flex flex-col items-center gap-4 text-center md:mt-20">
-            <p className="text-[10px] font-semibold uppercase tracking-[0.24em] text-[#2c2c25]/55">
+            <p className="text-[10px] font-semibold uppercase tracking-[0.24em] text-[#2c2c25]/70">
               The next case study could be yours
             </p>
             <a

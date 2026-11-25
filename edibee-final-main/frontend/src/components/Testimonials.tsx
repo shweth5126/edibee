@@ -98,7 +98,7 @@ export function Testimonials() {
             ( Kind words )
           </span>
           <h2
-            className="mt-4 font-display font-extrabold leading-[0.95] tracking-tightest text-paper"
+            className="mt-4 font-display font-semibold leading-[0.95] tracking-tightest text-paper"
             style={{ fontSize: "clamp(2.2rem, 4.4vw, 3.8rem)" }}
           >
             What our clients

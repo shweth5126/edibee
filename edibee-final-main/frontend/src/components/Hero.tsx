@@ -6,8 +6,9 @@ const ease = [0.16, 1, 0.3, 1] as const;
 
 const stats = [
   { value: "2M+", label: "Views generated" },
+  { value: "1,800+", label: "App installs driven" },
+  { value: "7L+", label: "Ad impressions" },
   { value: "50+", label: "Projects delivered" },
-  { value: "5+", label: "Brands served" },
 ];
 
 /* Real work, first screen: a reel playing in the middle, two stills fanned behind. */
@@ -44,32 +45,36 @@ function ReelFan({ loaded }: { loaded: boolean }) {
         className={`${card} left-1/2 top-0 z-20 aspect-[9/16] w-[42%] -translate-x-1/2 ring-4 ring-offwhite`}
       >
         <video
-          src="/work/work-summer.mp4"
-          poster="/work/work-summer.jpg"
+          src="/work/work-sevaco-hero.mp4"
+          poster="/work/work-sevaco-hero.jpg"
           autoPlay
           muted
           loop
           playsInline
           preload="metadata"
-          aria-label="Summer Campaign social reel by Edibee"
+          aria-label="Sevaco founder reel by Edibee"
           className="h-full w-full object-cover"
         />
         <span className="absolute left-3 top-3 rounded-full bg-black/55 px-2.5 py-1 text-[10px] font-semibold uppercase tracking-[0.14em] text-white backdrop-blur">
-          Social reel
+          Sevaco · Founder reel
         </span>
       </motion.div>
 
-      {/* mascot — small, tucked at the corner of the stack */}
-      <motion.img
-        src="/bee.webp"
-        width="1012"
-        height="924"
-        alt="Edibee bee mascot"
+      {/* mascot — top right, in line with the eyebrow; fades in, then floats */}
+      <motion.div
         initial={{ opacity: 0, scale: 0.8 }}
         animate={{ opacity: loaded ? 1 : 0, scale: loaded ? 1 : 0.8 }}
         transition={{ duration: 0.9, ease, delay: 0.7 }}
-        className="pointer-events-none absolute bottom-[2%] right-[-2%] z-30 w-[24%] drop-shadow-[0_18px_24px_rgba(11,11,10,0.22)]"
-      />
+        className="pointer-events-none absolute right-[-1%] top-[-17%] z-30 w-[20%]"
+      >
+        <img
+          src="/bee.webp"
+          width="1012"
+          height="924"
+          alt="Edibee bee mascot"
+          className="bee-float h-auto w-full drop-shadow-[0_18px_24px_rgba(11,11,10,0.22)]"
+        />
+      </motion.div>
     </div>
   );
 }
@@ -88,7 +93,7 @@ export function Hero() {
       className="relative overflow-hidden bg-offwhite px-6 pb-16 pt-28 md:px-12 md:pb-20 md:pt-36 lg:flex lg:min-h-[100svh] lg:items-center lg:px-16"
     >
       {/* ambient yellow glow behind the reels */}
-      <div className="pointer-events-none absolute right-[6%] top-[40%] h-[44vw] w-[44vw] max-h-[620px] max-w-[620px] -translate-y-1/2 rounded-full bg-honey/25 blur-[140px]" />
+      <div className="pointer-events-none absolute right-[6%] top-[40%] h-[44vw] w-[44vw] max-h-[620px] max-w-[620px] -translate-y-1/2 rounded-full bg-honey/15 blur-[140px]" />
 
       <div className="relative mx-auto grid w-full max-w-[1280px] items-center gap-12 lg:grid-cols-[1.08fr_0.92fr] lg:gap-x-10 lg:gap-y-0">
         {/* ── copy ── */}
@@ -109,7 +114,7 @@ export function Hero() {
             initial={{ opacity: 0, y: 36 }}
             animate={{ opacity: loaded ? 1 : 0, y: loaded ? 0 : 36 }}
             transition={{ duration: 1.1, ease, delay: 0.05 }}
-            className="font-display font-extrabold leading-[0.96] tracking-[-0.04em] text-ink text-balance"
+            className="font-display font-semibold leading-[0.96] tracking-[-0.025em] text-ink text-balance"
             style={{ fontSize: "clamp(2.75rem, 6.2vw, 6rem)" }}
           >
             Content that{" "}
@@ -130,8 +135,8 @@ export function Hero() {
             className="mt-7 max-w-xl text-[16px] font-medium leading-relaxed tracking-[-0.01em] text-charcoal/85 md:text-lg"
           >
             Edibee is a creative growth partner for brands, creators and local
-            businesses in Goa. Film, photography and social media built to get you
-            noticed, remembered and chosen.
+            businesses in Goa. Campaigns, Meta ads, film and social media built to
+            get you noticed, remembered and chosen.
           </motion.p>
 
           <motion.div
@@ -168,12 +173,12 @@ export function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: loaded ? 1 : 0, y: loaded ? 0 : 20 }}
           transition={{ duration: 1, ease, delay: 0.42 }}
-          className="grid max-w-lg lg:col-start-1 lg:row-start-2 lg:mt-12 lg:self-start grid-cols-3 gap-4 border-t border-ink/12 pt-6"
+          className="grid max-w-xl lg:col-start-1 lg:row-start-2 lg:mt-12 lg:self-start grid-cols-2 gap-x-4 gap-y-5 sm:grid-cols-4 border-t border-ink/12 pt-6"
         >
           {stats.map((s) => (
             <div key={s.label}>
               <dt className="sr-only">{s.label}</dt>
-              <dd className="font-display text-3xl font-extrabold tracking-[-0.04em] text-ink md:text-4xl">
+              <dd className="font-display text-3xl font-semibold tracking-[-0.025em] text-ink md:text-4xl">
                 {s.value}
               </dd>
               <dd className="mt-1 text-[12px] font-semibold uppercase leading-snug tracking-[0.08em] text-charcoal/75">

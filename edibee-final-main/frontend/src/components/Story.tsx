@@ -15,7 +15,7 @@ export function Story() {
           {lines.map((l, i) => (
             <Reveal key={l} delay={i * 0.1} y={40}>
               <h2
-                className="font-display font-extrabold leading-[0.98] tracking-[-0.04em] text-offwhite/45"
+                className="font-display font-semibold leading-[0.98] tracking-[-0.025em] text-offwhite/45"
                 style={{ fontSize: "clamp(2.4rem, 5.4vw, 5.6rem)" }}
               >
                 {l}
@@ -24,7 +24,7 @@ export function Story() {
           ))}
           <Reveal delay={0.3} y={40}>
             <h2
-              className="font-display font-extrabold leading-[0.98] tracking-[-0.04em] text-offwhite"
+              className="font-display font-semibold leading-[0.98] tracking-[-0.025em] text-offwhite"
               style={{ fontSize: "clamp(2.4rem, 5.4vw, 5.6rem)" }}
             >
               That's where <span className="text-honey">Edibee</span> comes in.

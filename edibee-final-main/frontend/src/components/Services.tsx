@@ -281,13 +281,13 @@ export function Services() {
             <Reveal delay={0.1}>
               <div className="max-w-[540px]">
                 {/* eyebrow */}
-                <p className="mb-3 text-xs uppercase tracking-[0.35em] text-charcoal/50">
+                <p className="mb-3 text-xs uppercase tracking-[0.35em] text-charcoal/65">
                   What We Build
                 </p>
 
                 {/* headline */}
                 <h2
-                  className="whitespace-nowrap font-display leading-[0.88] tracking-[-0.04em] text-ink"
+                  className="whitespace-nowrap font-display leading-[0.88] tracking-[-0.025em] text-ink"
                   style={{ fontSize: "clamp(2.7rem, 4.35vw, 4.85rem)" }}
                 >
                   Get noticed.
